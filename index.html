@@ -10,99 +10,114 @@
             font-family: 'Patrick Hand', cursive;
             margin: 0;
             text-align: left;
+            overflow: hidden;
         }
         header {
-            padding: 5px;
-            border-bottom: 2px solid transparent;
-            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100%" height="2" viewBox="0 0 100 2"%3E%3Cpath d="M0,1 Q10,0 20,1 T40,1 T60,1 T80,1 T100,1" stroke="black" stroke-width="2" fill="none"/%3E%3C/svg%3E') repeat-x;
             display: flex;
-            justify-content: space-between; /* Alinea los elementos a los lados */
-            align-items: center; /* Centra verticalmente */
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px;
+            background-color: white; 
+            border-bottom: 2px solid black; 
         }
         .rev {
             margin-left: 20px;
-            font-size: 16px; /* Ajusta el tamaño si es necesario */
-            color: black; /* Color del texto */
+            font-size: 16px; 
+            color: black; 
         }
         nav {
             display: flex;
-            align-items: center;
-            gap: 15px; /* Espacio entre los elementos */
-            position: relative; /* Para el posicionamiento absoluto */
+            align-items: center; 
+            gap: 20px; 
+        }
+        nav > div {
+            position: relative; 
         }
         nav a {
             text-decoration: none;
             color: black;
             font-weight: normal;
-            position: relative; /* Para el efecto de la barra */
+            text-transform: lowercase; 
         }
-        nav a::after {
-            content: '';
-            display: block;
-            width: 0; /* Inicialmente oculta */
-            height: 2px; /* Altura de la barra */
-            background: black; /* Color de la barra */
-            position: absolute; /* Posicionamiento absoluto */
-            left: 0;
-            bottom: -5px; /* Ajuste de posición inferior */
-            transition: width 0.3s ease; /* Transición suave */
-        }
-        nav a:hover::after {
-            width: 100%; /* Expande la barra al pasar el mouse */
-        }
-        .dropdown {
-            position: relative; /* Para el menú desplegable */
-        }
-        .dropdown-content {
-            display: none; /* Oculto por defecto */
+        .submenu {
+            display: none; 
             position: absolute;
-            background-color: white; /* Fondo del menú desplegable */
-            min-width: 160px; /* Ancho mínimo del menú */
-            z-index: 1; /* Asegura que esté encima */
+            background-color: white; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10; 
+            border-radius: 5px; 
+            padding: 5px 10px; 
+            white-space: nowrap; 
+            flex-direction: column; /* Asegura que las opciones estén en columna */
         }
-        .dropdown:hover .dropdown-content {
-            display: block; /* Muestra al pasar el mouse */
+        nav > div:hover .submenu {
+            display: flex; /* Cambiar a flex para mostrar las opciones verticalmente */
         }
-        .dropdown-content a {
-            color: black; /* Color de los enlaces en el menú desplegable */
-            padding: 12px 16px; /* Espaciado */
-            text-decoration: none; /* Sin subrayado */
-            display: block; /* Cada elemento ocupa una nueva línea */
+        .submenu a {
+            padding: 5px 10px; /* Espaciado en las opciones */
+            transition: transform 0.2s; /* Efecto de transición al pasar el ratón */
         }
-        .dropdown-content a:hover {
-            background-color: #f1f1f1; /* Color al pasar el mouse */
+        .submenu a:hover {
+            transform: translateY(-3px); /* Mover hacia arriba en hover */
         }
         .content {
             position: relative;
             margin: 0;
-            height: calc(100vh - 50px);
-            padding-left: 20px; /* Desplazar a la izquierda */
-            overflow: hidden; /* Elimina el desbordamiento */
+            height: calc(100vh - 50px); 
+            overflow: hidden; 
         }
         .pictogram {
-            width: 100%; /* Ajustar el ancho automáticamente */
-            height: auto; /* Mantiene la proporción de la imagen */
-            object-fit: contain; /* Asegura que se ajuste correctamente */
+            width: 750px; /* Tamaño del pictograma */
+            position: absolute; 
+            z-index: 3; 
+            top: 50%; 
+            left: 0; /* Comienza en la parte izquierda de la pantalla */
+            transform: translate(0, -50%); /* Centrado vertical */
+            animation: mover 15s linear infinite alternate; /* Movimiento moderado */
+        }
+        @keyframes mover {
+            0% { left: 0; }
+            100% { left: calc(100vw - 750px); } /* Asegura que termine justo antes del borde derecho */
+        }
+        .garabatos {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 1; 
+        }
+        .garabatos img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="rev">rev2025.01</div>
+    <div class="rev">rev 2025</div>
     <nav>
-        <div class="dropdown">
-            <a href="#">SHOP ONLINE</a>
-            <div class="dropdown-content">
-                <a href="#">Prendas Superiores</a>
-                <a href="#">Prendas Inferiores</a>
-                <a href="#">Accesorios</a>
+        <div>
+            <a href="#">shop online</a>
+            <div class="submenu">
+                <a href="#">prendas superiores</a>
+                <a href="#">prendas inferiores</a>
+                <a href="#">accesorios</a>
             </div>
         </div>
-        <a href="#">GUÍA DE TALLAS</a>
-        <a href="#">CONTACTO</a>
+        <a href="#">guía de tallas</a>
+        <a href="#">contacto</a>
     </nav>
 </header>
 
 <div class="content">
-    <img src="https
+    <div class="garabatos">
+        <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
+    </div>
+    <img class="pictogram" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma">
+</div>
+
+</body>
+</html>
