@@ -105,11 +105,11 @@
     }
 
     .pictogram-container {
-      width: 1200px; /* Ahora la mitad de lo que era antes */
+      width: 600px;
       height: auto;
       position: relative;
-      animation: mover 20s linear infinite alternate;
       z-index: 2;
+      animation: mover 8s ease-in-out infinite alternate;
     }
 
     .pictogram-container img {
@@ -128,7 +128,7 @@
 
     @keyframes mover {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(100vw - 1200px)); }
+      100% { transform: translateX(50vw); }
     }
 
     .pictogram-container:hover {
@@ -137,12 +137,12 @@
 
     @media (max-width: 768px) {
       .pictogram-container {
-        width: 800px;
+        width: 400px;
       }
 
       @keyframes mover {
         0% { transform: translateX(0); }
-        100% { transform: translateX(calc(100vw - 800px)); }
+        100% { transform: translateX(30vw); }
       }
     }
 
