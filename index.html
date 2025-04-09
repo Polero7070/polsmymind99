@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
+ <header>
     <nav class="navbar">
       <div class="logo">POLS</div>
       <ul class="nav-links">
@@ -18,11 +18,72 @@
       </ul>
     </nav>
   </header>
+
+  <canvas id="canvas"></canvas>
+
+  <div class="animated-text">
+    <h1>MI MENTE</h1>
+    <h2>SE VISTE DE LO QUE SIENTO</h2>
+  </div>
+
   <div class="garabatos-container">
     <div class="garabato garabato1"></div>
     <div class="garabato garabato2"></div>
     <div class="garabato garabato3"></div>
     <div class="garabato garabato4"></div>
   </div>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Circle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 1.5 + 0.5;
+        this.alpha = Math.random();
+        this.speed = Math.random() * 0.5 + 0.2;
+        this.color = "rgba(255, 255, 0," + this.alpha + ")";
+      }
+
+      update() {
+        this.y -= this.speed;
+        if (this.y < 0) this.y = canvas.height;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    const circles = Array.from({ length: 200 }, () => new Circle());
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      circles.forEach((circle) => {
+        circle.update();
+        circle.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
