@@ -1,89 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>POLS Landing</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POLS - Presentación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Patrick Hand', cursive;
+      background-color: #ffffff;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #FFD700; /* Amarillo POLS */
+      margin-bottom: 2rem;
+    }
+
+    .image-container {
+      width: 90%;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
- <header>
-    <nav class="navbar">
-      <div class="logo">POLS</div>
-      <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <canvas id="canvas"></canvas>
-
-  <div class="animated-text">
-    <h1>MI MENTE</h1>
-    <h2>SE VISTE DE LO QUE SIENTO</h2>
+  <h1>POLS</h1>
+  <div class="image-container">
+    <img src="Presentación Manual de Marca Minimalista y elegante  Rosa.png" alt="Presentación Manual de Marca" />
   </div>
-
-  <div class="garabatos-container">
-    <div class="garabato garabato1"></div>
-    <div class="garabato garabato2"></div>
-    <div class="garabato garabato3"></div>
-    <div class="garabato garabato4"></div>
+  <div class="image-container">
+    <img src="E P.png" alt="Logo POLS con figura" />
   </div>
-
-  <script>
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    class Circle {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 1.5 + 0.5;
-        this.alpha = Math.random();
-        this.speed = Math.random() * 0.5 + 0.2;
-        this.color = "rgba(255, 255, 0," + this.alpha + ")";
-      }
-
-      update() {
-        this.y -= this.speed;
-        if (this.y < 0) this.y = canvas.height;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-    }
-
-    const circles = Array.from({ length: 200 }, () => new Circle());
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      circles.forEach((circle) => {
-        circle.update();
-        circle.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
 </body>
 </html>
