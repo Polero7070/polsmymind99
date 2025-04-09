@@ -1,137 +1,60 @@
-
 body {
   margin: 0;
-  font-family: sans-serif;
   background-color: white;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  border-bottom: 1px solid #ccc;
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 1000;
+  padding: 20px 40px;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #000;
+  height: 80px;
+  cursor: pointer;
 }
 
-.nav-links {
+nav ul.menu {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links a {
+nav ul.menu li {
+  position: relative;
+}
+
+nav ul.menu a {
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-size: 20px;
 }
 
-.garabatos-container {
-  margin-top: 60px;
-  height: 150px;
-  background-color: white;
-  overflow: hidden;
-  position: relative;
-  border-bottom: 2px solid #000;
-}
-
-.garabato {
+nav ul.menu .dropdown {
+  display: none;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Scribble_black_line.svg/2560px-Scribble_black_line.svg.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-}
-
-.garabato1 {
-  top: 10px;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  top: 100%;
   left: 0;
-  animation: move1 5s infinite alternate ease-in-out;
-}
-.garabato2 {
-  top: 20px;
-  left: 25%;
-  animation: move2 6s infinite alternate ease-in-out;
-}
-.garabato3 {
-  top: 15px;
-  left: 50%;
-  animation: move3 4s infinite alternate ease-in-out;
-}
-.garabato4 {
-  top: 25px;
-  left: 75%;
-  animation: move4 7s infinite alternate ease-in-out;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
 
-@keyframes move1 {
-  from { transform: translateX(0px); }
-  to { transform: translateX(20px); }
-}
-@keyframes move2 {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-10px); }
-}
-@keyframes move3 {
-  from { transform: translateX(0px); }
-  to { transform: translateX(-15px); }
-}
-@keyframes move4 {
-  from { transform: translateY(0px); }
-  to { transform: translateY(10px); }
-}
-#canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+nav ul.menu li.submenu:hover .dropdown {
+  display: block;
 }
 
-.animated-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+nav ul.menu .dropdown li {
+  margin-bottom: 10px;
+}
+
+footer {
   text-align: center;
-  color: black;
-  font-family: 'sans-serif';
-  z-index: 10;
-}
-
-.animated-text h1 {
-  font-size: 3rem;
-  margin: 0;
-  animation: fadeIn 2s ease-out forwards;
-}
-
-.animated-text h2 {
-  font-size: 1.5rem;
-  margin: 0;
-  opacity: 0;
-  animation: fadeIn 2s ease-out forwards;
-  animation-delay: 1s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 30px;
+  font-size: 18px;
 }
