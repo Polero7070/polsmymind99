@@ -24,6 +24,7 @@
       padding: 10px 20px;
       background-color: white;
       border-bottom: 2px solid black;
+      position: relative;
       z-index: 10;
     }
 
@@ -52,11 +53,11 @@
     .submenu {
       display: none;
       position: absolute;
-      left: -40px; /* más a la izquierda */
+      left: -40px;
       top: 100%;
       background-color: white;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 99;
+      z-index: 999;
       border-radius: 5px;
       padding: 5px 10px;
       flex-direction: column;
@@ -69,7 +70,7 @@
     }
 
     .submenu a {
-      font-size: 12px; /* letra más chica */
+      font-size: 12px;
       padding: 5px 10px;
       transition: background-color 0.2s ease;
       text-align: left;
@@ -85,11 +86,12 @@
       justify-content: center;
       align-items: flex-start;
       position: relative;
+      z-index: 1;
     }
 
     .garabatos {
       position: absolute;
-      top: -100px; /* subido más arriba */
+      top: -100px;
       left: 0;
       width: 100%;
       height: 130%;
@@ -103,8 +105,7 @@
     }
 
     .pictogram-container {
-      width: 2400px; /* 6 veces más grande que los 400px originales */
-      max-width: none;
+      width: 1200px; /* Ahora la mitad de lo que era antes */
       height: auto;
       position: relative;
       animation: mover 20s linear infinite alternate;
@@ -117,6 +118,7 @@
       left: 0;
       width: 100%;
       transition: opacity 0.5s ease;
+      pointer-events: auto;
     }
 
     #pictogramHover {
@@ -126,7 +128,7 @@
 
     @keyframes mover {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(100vw - 2400px)); }
+      100% { transform: translateX(calc(100vw - 1200px)); }
     }
 
     .pictogram-container:hover {
@@ -135,12 +137,12 @@
 
     @media (max-width: 768px) {
       .pictogram-container {
-        width: 1000px; /* Ajuste móvil */
+        width: 800px;
       }
 
       @keyframes mover {
         0% { transform: translateX(0); }
-        100% { transform: translateX(calc(100vw - 1000px)); }
+        100% { transform: translateX(calc(100vw - 800px)); }
       }
     }
 
@@ -180,16 +182,15 @@
 </div>
 
 <script>
-  const container = document.getElementById('pictogramContainer');
   const defaultImg = document.getElementById('pictogramDefault');
   const hoverImg = document.getElementById('pictogramHover');
 
-  container.addEventListener('mouseenter', () => {
+  defaultImg.addEventListener('mouseenter', () => {
     defaultImg.style.opacity = 0;
     hoverImg.style.opacity = 1;
   });
 
-  container.addEventListener('mouseleave', () => {
+  hoverImg.addEventListener('mouseleave', () => {
     defaultImg.style.opacity = 1;
     hoverImg.style.opacity = 0;
   });
