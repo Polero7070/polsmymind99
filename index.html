@@ -1,34 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>POLS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Printvetica&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Patrick Hand', cursive;
+            margin: 0;
+            text-align: left;
+        }
+        header {
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100%" height="2" viewBox="0 0 100 2"%3E%3Cpath d="M0,1 Q10,0 20,1 T40,1 T60,1 T80,1 T100,1" stroke="black" stroke-width="2" fill="none"/%3E%3C/svg%3E') repeat-x;
+            display: flex;
+            justify-content: space-between; /* Alinea los elementos a los lados */
+            align-items: center; /* Centra verticalmente */
+        }
+        .rev {
+            margin-left: 20px;
+            font-size: 16px; /* Ajusta el tamaño si es necesario */
+            color: black; /* Color del texto */
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espacio entre los elementos */
+            position: relative; /* Para el posicionamiento absoluto */
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+            position: relative; /* Para el efecto de la barra */
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0; /* Inicialmente oculta */
+            height: 2px; /* Altura de la barra */
+            background: black; /* Color de la barra */
+            position: absolute; /* Posicionamiento absoluto */
+            left: 0;
+            bottom: -5px; /* Ajuste de posición inferior */
+            transition: width 0.3s ease; /* Transición suave */
+        }
+        nav a:hover::after {
+            width: 100%; /* Expande la barra al pasar el mouse */
+        }
+        .dropdown {
+            position: relative; /* Para el menú desplegable */
+        }
+        .dropdown-content {
+            display: none; /* Oculto por defecto */
+            position: absolute;
+            background-color: white; /* Fondo del menú desplegable */
+            min-width: 160px; /* Ancho mínimo del menú */
+            z-index: 1; /* Asegura que esté encima */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block; /* Muestra al pasar el mouse */
+        }
+        .dropdown-content a {
+            color: black; /* Color de los enlaces en el menú desplegable */
+            padding: 12px 16px; /* Espaciado */
+            text-decoration: none; /* Sin subrayado */
+            display: block; /* Cada elemento ocupa una nueva línea */
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* Color al pasar el mouse */
+        }
+        .content {
+            position: relative;
+            margin: 0;
+            height: calc(100vh - 50px);
+            padding-left: 20px; /* Desplazar a la izquierda */
+            overflow: hidden; /* Elimina el desbordamiento */
+        }
+        .pictogram {
+            width: 100%; /* Ajustar el ancho automáticamente */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Asegura que se ajuste correctamente */
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <a href="shop.html">
-      <img src="pictograma.png" alt="Pictograma POLS" class="logo">
-    </a>
-    <nav>
-      <ul class="menu">
-        <li class="submenu">
-          <a href="shop.html">Shop Online</a>
-          <ul class="dropdown">
-            <li><a href="superiores.html">Prendas Superiores</a></li>
-            <li><a href="inferiores.html">Prendas Inferiores</a></li>
-            <li><a href="accesorios.html">Accesorios</a></li>
-          </ul>
-        </li>
-        <li><a href="guia-talles.html">Guía de Talles</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <footer>
-    <p>IG: <a href="https://www.instagram.com/polsmymind" target="_blank">@polsmymind</a></p>
-  </footer>
-</body>
-</html>
+<header>
+    <div class="rev">rev2025.01</div>
+    <nav>
+        <div class="dropdown">
+            <a href="#">SHOP ONLINE</a>
+            <div class="dropdown-content">
+                <a href="#">Prendas Superiores</a>
+                <a href="#">Prendas Inferiores</a>
+                <a href="#">Accesorios</a>
+            </div>
+        </div>
+        <a href="#">GUÍA DE TALLAS</a>
+        <a href="#">CONTACTO</a>
+    </nav>
+</header>
+
+<div class="content">
+    <img src="https
