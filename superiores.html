@@ -1,51 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prendas Superiores</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLS Shop - Rev 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #000;
+    }
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      margin-right: 20px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .item {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+    .item h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .item p {
+      margin: 0.3rem 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="rev">rev 2025</div>
     <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="superiores.html">Prendas Superiores</a></li>
-        <li><a href="inferiores.html">Prendas Inferiores</a></li>
-        <li><a href="accesorios.html">Accesorios</a></li>
-      </ul>
+      <a href="#superiores">Prendas Superiores</a>
+      <a href="#inferiores">Prendas Inferiores</a>
+      <a href="#accesorios">Accesorios</a>
     </nav>
   </header>
 
-  <main>
+  <div class="section" id="superiores">
     <h1>Prendas Superiores</h1>
-    <section class="shop-section">
-      <div class="product-card">
+    <div class="grid">
+      <div class="item">
         <h2>Remera BASIC</h2>
         <p>Talles: 3 L / 1 M</p>
         <p>Precio: $14.000</p>
       </div>
-
-      <div class="product-card">
+      <div class="item">
         <h2>Remera BROKEN</h2>
         <p>Talles: S / M / L / XL</p>
         <p>Precio: $16.000</p>
       </div>
-
-      <div class="product-card">
+      <div class="item">
         <h2>Remera Manga Larga</h2>
         <p>Talle único</p>
         <p>Precio: $28.000</p>
       </div>
-
-      <div class="product-card">
+      <div class="item">
         <h2>Camisacos</h2>
         <p>Talles: S / M / L / XL</p>
         <p>Precio: $24.400</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+
+  <div class="section" id="inferiores">
+    <h1>Prendas Inferiores</h1>
+    <div class="grid">
+      <div class="item">
+        <h2>Jogging</h2>
+        <p>Cantidad: 2 unidades</p>
+        <p>Precio: $24.000 c/u</p>
+      </div>
+      <div class="item">
+        <h2>Jeans</h2>
+        <p>Cantidad: 2 unidades</p>
+        <p>Precio: $30.000 c/u</p>
+      </div>
+      <div class="item">
+        <h2>Parachute</h2>
+        <p>Cantidad: 1 unidad</p>
+        <p>Precio: $23.000</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="accesorios">
+    <h1>Accesorios</h1>
+    <div class="grid">
+      <div class="item">
+        <h2>Guantes</h2>
+        <p>Cantidad: 4 unidades</p>
+        <p>Precio total: $10.000</p>
+      </div>
+      <div class="item">
+        <h2>Gorros de lana</h2>
+        <p>Cantidad: 2 unidades</p>
+        <p>Precio total: $5.000</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
