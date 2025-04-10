@@ -124,38 +124,43 @@
       top: 50px;
     }
 
-     .pictogram-container {
+    .pictogram-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 250px; /* Ajustado a tamaño web estándar */
   height: auto;
   z-index: 2;
   animation: mover 6s ease-in-out infinite alternate;
+  cursor: pointer;
 }
 
 @keyframes mover {
   0% { transform: translate(-50%, -50%) translateX(0); }
-  100% { transform: translate(-50%, -50%) translateX(50px); }
+  100% { transform: translate(-50%, -50%) translateX(40px); }
 }
-
+    #pictogramHover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
     .pictogram-container:hover {
       animation-play-state: paused;
     }
 
     @media (max-width: 768px) {
-      .pictogram-container {
-        width: 400px;
-        height: 800px;
-      }
+  .pictogram-container {
+    width: 180px;
+  }
 
-      @keyframes mover {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(30vw); }
-      }
-    }
+  @keyframes mover {
+    0% { transform: translate(-50%, -50%) translateX(0); }
+    100% { transform: translate(-50%, -50%) translateX(20px); }
+  }
+}
 
     .glitch {
       position: relative;
