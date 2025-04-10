@@ -33,10 +33,24 @@
       padding: 10px;
       text-align: center;
     }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
+    .image-container {
+      position: relative;
+    }
+    .image-container img {
+      width: 100%;
+      transition: opacity 0.3s ease;
+    }
+    .hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .image-container:hover .main-img {
+      opacity: 0;
+    }
+    .image-container:hover .hover-img {
+      opacity: 1;
     }
     .price {
       font-size: 18px;
@@ -72,14 +86,20 @@
 
 <div class="products">
   <div class="product">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/volver%20al%20inicio.png?raw=true" alt="Remera 2025.01.00">
+    <div class="image-container">
+      <img class="main-img" src="https://github.com/Polero7070/polsmymind99/blob/main/volver%20al%20inicio.png?raw=true" alt="Remera 2025.01.00">
+      <img class="hover-img" src="https://github.com/Polero7070/polsmymind99/blob/main/volver%20al%20inicio%20(1).png?raw=true" alt="Hover Remera">
+    </div>
     <h2>Remera 2025.01.00</h2>
     <p class="price">180,00 €</p>
     <a href="#" class="button">Añadir al carrito</a>
   </div>
-  
+
   <div class="product">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/remera2.png?raw=true" alt="Remera 2025.01.00">
+    <div class="image-container">
+      <img class="main-img" src="https://github.com/Polero7070/polsmymind99/blob/main/remera2.png?raw=true" alt="Remera 2025.01.00">
+      <img class="hover-img" src="https://github.com/Polero7070/polsmymind99/blob/main/volver%20al%20inicio%20(1).png?raw=true" alt="Hover Remera">
+    </div>
     <h2>Remera 2025.01.00</h2>
     <p class="price">230,00 €</p>
     <a href="#" class="button">Añadir al carrito</a>
@@ -88,4 +108,3 @@
 
 </body>
 </html>
-Commit new file "shop.html"
