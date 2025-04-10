@@ -10,7 +10,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto !important;
     }
 
     body {
@@ -40,13 +39,7 @@
       gap: 20px;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-    }
-
-    nav li {
+    nav > div {
       position: relative;
     }
 
@@ -60,36 +53,48 @@
     .submenu {
       display: none;
       position: absolute;
+      left: -40px;
       top: 100%;
-      left: 0;
       background-color: white;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 999;
       border-radius: 5px;
       padding: 5px 10px;
-      z-index: 999;
+      flex-direction: column;
+      white-space: nowrap;
+      min-width: 120px;
     }
 
-    nav li:hover .submenu {
-      display: block;
+    nav > div:hover .submenu {
+      display: flex;
     }
 
     .submenu a {
-      display: block;
       font-size: 12px;
       padding: 5px 10px;
-      white-space: nowrap;
+      transition: background-color 0.2s ease;
+      text-align: left;
     }
 
     .submenu a:hover {
       background-color: #eee;
     }
 
+    .content {
+      height: calc(100vh - 50px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
     .garabatos {
       position: absolute;
-      top: -110px;
+      top: -120px;
       left: 0;
       width: 100%;
-      height: 130%;
+      height: 120%;
       z-index: 1;
     }
 
@@ -99,172 +104,63 @@
       object-fit: cover;
     }
 
-    .video-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .pictogram-container {
       width: 800px;
-      height: 1000px;
+      height: 1100px;
       position: relative;
       z-index: 2;
       animation: mover 8s ease-in-out infinite alternate;
-      margin: auto;
-      top: 50px;
     }
 
-   .pictogram-container {
-  position: absolute;
-  top: 50%;
-  left: 150%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 1000;
-  z-index: 2;
-  animation: mover 6s ease-in-out infinite alternate;
-  cursor: pointer;
-}
+    .pictogram-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      transition: opacity 0.4s ease;
+      pointer-events: auto;
+    }
 
-/* Animación de movimiento */
-@keyframes mover {
-  0% { transform: translate(-50%, -50%) translateX(0); }
-  100% { transform: translate(-50%, -50%) translateX(40px); }
-}
+    #pictogramHover {
+      opacity: 0;
+    }
 
-/* Hover pausa la animación */
-.pictogram-container:hover {
-  animation-play-state: paused;
-}
+    @keyframes mover {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50vw); }
+    }
 
-/* Las imágenes internas se ajustan */
-.pictogram-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+    .pictogram-container:hover {
+      animation-play-state: paused;
+    }
 
-/* Imagen por defecto visible */
-#pictogramDefault {
-  opacity: 1;
-  z-index: 1;
-}
+    @media (max-width: 768px) {
+      .pictogram-container {
+        width: 400px;
+        height: 800px;
+      }
 
-/* Imagen hover oculta por defecto */
-#pictogramHover {
-  opacity: 0;
-  z-index: 2;
-}
+      @keyframes mover {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(30vw); }
+      }
+    }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .pictogram-container {
-    width: 150px;
-  }
-
-  @keyframes mover {
-    0% { transform: translate(-50%, -50%) translateX(0); }
-    100% { transform: translate(-50%, -50%) translateX(20px); }
-  }
-}
     .glitch {
       position: relative;
     }
 
-    .glitch::before {
+    .glitch::before,
+    .glitch::after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
       background-repeat: no-repeat;
       background-size: cover;
       opacity: 0;
       pointer-events: none;
     }
-
-    .pictogram-container:hover .glitch::before {
-      animation: glitchAnim 0.5s infinite linear;
-      opacity: 0.8;
-    }
-
-    @keyframes glitchAnim {
-      0% { transform: translate(0, 0); }
-      20% { transform: translate(-2px, -2px); }
-      40% { transform: translate(2px, 2px); }
-      60% { transform: translate(-1px, 1px); }
-      80% { transform: translate(1px, -1px); }
-      100% { transform: translate(0, 0); }
-    }
-  </style>
-</head>
-<body>
-
- <header>
-  <div class="rev">rev 2025</div>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">Shop Online</a>
-        <div class="submenu">
-          <a href="superiores.html">Prendas Superiores</a>
-          <a href="inferiores.html">Prendas Inferiores</a>
-          <a href="accesorios.html">Accesorios</a>
-        </div>
-      </li>
-      <li><a href="#">Guía de talles</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <!-- Fondo de garabatos y video -->
-  <div class="garabatos">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
-  </div>
-
-  <div class="video-container">
-    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
-  </div>
-
-  <!-- Pictograma -->
-  <a href="shop.html" class="pictogram-link">
-    <div class="pictogram-container glitch" id="pictogramContainer">
-      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
-    </div>
-  </a>
-
-  <script>
-    const container = document.getElementById('pictogramContainer');
-const defaultImg = document.getElementById('pictogramDefault');
-const hoverImg = document.getElementById('pictogramHover');
-
-container.addEventListener('mouseenter', () => {
-  defaultImg.style.opacity = 0;
-  hoverImg.style.opacity = 1;
-});
-
-container.addEventListener('mouseleave', () => {
-  defaultImg.style.opacity = 1;
-  hoverImg.style.opacity = 0;
-});
-  </script>
-
-</body>
-</html>
