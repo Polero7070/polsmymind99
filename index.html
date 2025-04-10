@@ -124,26 +124,22 @@
       top: 50px;
     }
 
-    .pictogram-container {
+     .pictogram-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 1100px;
+  width: 400px;
+  height: auto;
   z-index: 2;
-  animation: mover 8s ease-in-out infinite alternate;
+  animation: mover 6s ease-in-out infinite alternate;
 }
 
+@keyframes mover {
+  0% { transform: translate(-50%, -50%) translateX(0); }
+  100% { transform: translate(-50%, -50%) translateX(50px); }
+}
 
-    #pictogramHover {
-      opacity: 0;
-    }
-
-    @keyframes mover {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(50vw); }
-    }
 
     .pictogram-container:hover {
       animation-play-state: paused;
