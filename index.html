@@ -179,14 +179,23 @@ header {
       opacity: 0.8;
     }
 
-    @keyframes glitchAnim {
-      0% { transform: translate(0, 0); }
-      20% { transform: translate(-2px, -2px); }
-      40% { transform: translate(2px, 2px); }
-      60% { transform: translate(-1px, 1px); }
-      80% { transform: translate(1px, -1px); }
-      100% { transform: translate(0, 0); }
-<header>
+   @keyframes glitchAnim {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
+} /* ✅ Cerramos correctamente el CSS */
+
+/* AHORA empieza el HTML correctamente */
+</style>
+</head>
+<body>
+  <header>
+    ...
+  </header>
+
   <div class="rev">rev 2025</div>
 
   <nav class="menu">
