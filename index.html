@@ -13,19 +13,18 @@
     }
 
     body {
-  font-family: 'Patrick Hand', cursive;
-  overflow: hidden;
-  cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
-}
+      font-family: 'Patrick Hand', cursive;
+      overflow: hidden;
+      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
+    }
 
-/* Cursor personalizado en TODO el sitio */
-*,
-*::before,
-*::after {
-  cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto !important;
-}
+    *,
+    *::before,
+    *::after {
+      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto !important;
+    }
 
-header {
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,14 +40,11 @@ header {
       color: black;
     }
 
-    nav {
+    nav ul {
       display: flex;
       align-items: center;
       gap: 20px;
-    }
-
-    nav > div {
-      position: relative;
+      list-style: none;
     }
 
     nav a {
@@ -61,8 +57,8 @@ header {
     .submenu {
       display: none;
       position: absolute;
-      left: -40px;
       top: 100%;
+      left: 0;
       background-color: white;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       z-index: 999;
@@ -73,7 +69,7 @@ header {
       min-width: 120px;
     }
 
-    nav > div:hover .submenu {
+    li:hover .submenu {
       display: flex;
     }
 
@@ -86,15 +82,6 @@ header {
 
     .submenu a:hover {
       background-color: #eee;
-    }
-
-    .content {
-      height: calc(100vh - 50px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 1;
     }
 
     .garabatos {
@@ -159,8 +146,7 @@ header {
       position: relative;
     }
 
-    .glitch::before,
-    .glitch::after {
+    .glitch::before {
       content: "";
       position: absolute;
       top: 0;
@@ -179,80 +165,65 @@ header {
       opacity: 0.8;
     }
 
-   @keyframes glitchAnim {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-2px, -2px); }
-  40% { transform: translate(2px, 2px); }
-  60% { transform: translate(-1px, 1px); }
-  80% { transform: translate(1px, -1px); }
-  100% { transform: translate(0, 0); }
-} /* ✅ Cerramos correctamente el CSS */
-
-/* AHORA empieza el HTML correctamente */
-</style>
+    @keyframes glitchAnim {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
-    ...
+    <div class="rev">rev 2025</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="superiores.html">Prendas Superiores</a></li>
+        <li><a href="inferiores.html">Prendas Inferiores</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="#">Guía de tallas</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li>
+          <a href="#">Redes</a>
+          <div class="submenu">
+            <a href="https://www.instagram.com/polsmymind__" target="_blank">Instagram</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="rev">rev 2025</div>
-
-  <nav class="menu">
-    <ul>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="superiores.html">Prendas Superiores</a></li>
-      <li><a href="inferiores.html">Prendas Inferiores</a></li>
-      <li><a href="accesorios.html">Accesorios</a></li>
-      <li><a href="#">Guía de tallas</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li>
-        <div class="submenu">
-          <a href="https://www.instagram.com/polsmymind__" target="_blank">Instagram</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-  <!-- Fondo de garabatos -->
   <div class="garabatos">
     <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
-    <div class="video-container">
-      <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
-    </div>
   </div>
 
-  <!-- Pictograma por encima -->
   <a href="shop.html" class="pictogram-link">
     <div class="pictogram-container glitch" id="pictogramContainer">
       <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
       <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
     </div>
   </a>
-</div>
 
-    <div class="video-container">
-      <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
-    </div>
-  </div>
-</div>
+  <script>
+    const container = document.getElementById('pictogramContainer');
+    const defaultImg = document.getElementById('pictogramDefault');
+    const hoverImg = document.getElementById('pictogramHover');
 
-<script>
-  const container = document.getElementById('pictogramContainer');
-  const defaultImg = document.getElementById('pictogramDefault');
-  const hoverImg = document.getElementById('pictogramHover');
+    container.addEventListener('mouseenter', () => {
+      defaultImg.style.opacity = 0;
+      hoverImg.style.opacity = 1;
+    });
 
-  container.addEventListener('mouseenter', () => {
-    defaultImg.style.opacity = 0;
-    hoverImg.style.opacity = 1;
-  });
-
-  container.addEventListener('mouseleave', () => {
-    defaultImg.style.opacity = 1;
-    hoverImg.style.opacity = 0;
-  });
-</script>
+    container.addEventListener('mouseleave', () => {
+      defaultImg.style.opacity = 1;
+      hoverImg.style.opacity = 0;
+    });
+  </script>
 
 </body>
 </html>
