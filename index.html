@@ -124,15 +124,17 @@
       top: 50px;
     }
 
-    .pictogram-container img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      transition: opacity 0.4s ease;
-      pointer-events: auto;
-    }
+    .pictogram-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 1100px;
+  z-index: 2;
+  animation: mover 8s ease-in-out infinite alternate;
+}
+
 
     #pictogramHover {
       opacity: 0;
@@ -194,25 +196,23 @@
 </head>
 <body>
 
-  <header>
-    <div class="rev">rev 2025</div>
-    <nav>
-      <ul>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="superiores.html">Prendas Superiores</a></li>
-        <li><a href="inferiores.html">Prendas Inferiores</a></li>
-        <li><a href="accesorios.html">Accesorios</a></li>
-        <li><a href="#">Guía de tallas</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li>
-          <a href="#">Redes</a>
-          <div class="submenu">
-            <a href="https://www.instagram.com/polsmymind__" target="_blank">Instagram</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
+ <header>
+  <div class="rev">rev 2025</div>
+  <nav>
+    <ul>
+      <li>
+        <a href="#">Shop Online</a>
+        <div class="submenu">
+          <a href="superiores.html">Prendas Superiores</a>
+          <a href="inferiores.html">Prendas Inferiores</a>
+          <a href="accesorios.html">Accesorios</a>
+        </div>
+      </li>
+      <li><a href="#">Guía de talles</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Fondo de garabatos y video -->
   <div class="garabatos">
