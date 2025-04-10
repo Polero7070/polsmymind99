@@ -124,36 +124,55 @@
       top: 50px;
     }
 
-    .pictogram-container {
+   .pictogram-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 250px; /* Ajustado a tamaño web estándar */
+  width: 250px;
   height: auto;
   z-index: 2;
   animation: mover 6s ease-in-out infinite alternate;
   cursor: pointer;
 }
 
+/* Animación de movimiento */
 @keyframes mover {
   0% { transform: translate(-50%, -50%) translateX(0); }
   100% { transform: translate(-50%, -50%) translateX(40px); }
 }
-    #pictogramHover {
-  opacity: 0;
+
+/* Hover pausa la animación */
+.pictogram-container:hover {
+  animation-play-state: paused;
+}
+
+/* Las imágenes internas se ajustan */
+.pictogram-container img {
+  width: 100%;
+  height: auto;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-    .pictogram-container:hover {
-      animation-play-state: paused;
-    }
+/* Imagen por defecto visible */
+#pictogramDefault {
+  opacity: 1;
+  z-index: 1;
+}
 
-    @media (max-width: 768px) {
+/* Imagen hover oculta por defecto */
+#pictogramHover {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .pictogram-container {
-    width: 180px;
+    width: 150px;
   }
 
   @keyframes mover {
@@ -161,7 +180,6 @@
     100% { transform: translate(-50%, -50%) translateX(20px); }
   }
 }
-
     .glitch {
       position: relative;
     }
@@ -234,18 +252,18 @@
 
   <script>
     const container = document.getElementById('pictogramContainer');
-    const defaultImg = document.getElementById('pictogramDefault');
-    const hoverImg = document.getElementById('pictogramHover');
+const defaultImg = document.getElementById('pictogramDefault');
+const hoverImg = document.getElementById('pictogramHover');
 
-    container.addEventListener('mouseenter', () => {
-      defaultImg.style.opacity = 0;
-      hoverImg.style.opacity = 1;
-    });
+container.addEventListener('mouseenter', () => {
+  defaultImg.style.opacity = 0;
+  hoverImg.style.opacity = 1;
+});
 
-    container.addEventListener('mouseleave', () => {
-      defaultImg.style.opacity = 1;
-      hoverImg.style.opacity = 0;
-    });
+container.addEventListener('mouseleave', () => {
+  defaultImg.style.opacity = 1;
+  hoverImg.style.opacity = 0;
+});
   </script>
 
 </body>
