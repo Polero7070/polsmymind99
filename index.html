@@ -15,6 +15,12 @@
     body {
       font-family: 'Patrick Hand', cursive;
       overflow: hidden;
+      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
+    }
+
+    /* Mantener el cursor personalizado sobre elementos clickeables */
+    a, button, input, .pictogram-container, .submenu a {
+      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
     }
 
     header {
@@ -39,11 +45,45 @@
       gap: 20px;
     }
 
+    nav > div {
+      position: relative;
+    }
+
     nav a {
       text-decoration: none;
       color: black;
       font-weight: normal;
       text-transform: lowercase;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      left: -40px;
+      top: 100%;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      border-radius: 5px;
+      padding: 5px 10px;
+      flex-direction: column;
+      white-space: nowrap;
+      min-width: 120px;
+    }
+
+    nav > div:hover .submenu {
+      display: flex;
+    }
+
+    .submenu a {
+      font-size: 12px;
+      padding: 5px 10px;
+      transition: background-color 0.2s ease;
+      text-align: left;
+    }
+
+    .submenu a:hover {
+      background-color: #eee;
     }
 
     .content {
@@ -57,10 +97,10 @@
 
     .garabatos {
       position: absolute;
-      top: -120px;
+      top: -110px;
       left: 0;
       width: 100%;
-      height: 120%;
+      height: 130%;
       z-index: 1;
     }
 
@@ -101,23 +141,49 @@
       animation-play-state: paused;
     }
 
-    .video-container {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      width: 300px;
-      height: 180px;
-      z-index: 3;
-      border: 2px solid black;
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
+    @media (max-width: 768px) {
+      .pictogram-container {
+        width: 400px;
+        height: 800px;
+      }
+
+      @keyframes mover {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(30vw); }
+      }
     }
 
-    .video-container video {
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .pictogram-container:hover .glitch::before {
+      background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
+      animation: glitchAnim 0.5s infinite linear;
+      opacity: 0.8;
+    }
+
+    @keyframes glitchAnim {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0, 0); }
     }
   </style>
 </head>
@@ -127,7 +193,7 @@
   <div class="rev">rev 2025</div>
   <nav>
     <div>
-      <a href="#">shop online</a>
+      <a href="shop.html">shop online</a>
       <div class="submenu">
         <a href="#">prendas superiores</a>
         <a href="#">prendas inferiores</a>
@@ -147,10 +213,33 @@
 <div class="content">
   <div class="garabatos">
     <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
+    <a href="shop.html" class="pictogram-link">
+      <div class="pictogram-container glitch" id="pictogramContainer">
+        <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+        <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
+      </div>
+    </a>
+    <div class="video-container">
+      <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
+    </div>
   </div>
-  <div class="pictogram-container" id="pictogramContainer">
-    <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-    <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
-  </div>
-  <div class="video-container">
-    <video src="https://github.com/
+</div>
+
+<script>
+  const container = document.getElementById('pictogramContainer');
+  const defaultImg = document.getElementById('pictogramDefault');
+  const hoverImg = document.getElementById('pictogramHover');
+
+  container.addEventListener('mouseenter', () => {
+    defaultImg.style.opacity = 0;
+    hoverImg.style.opacity = 1;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    defaultImg.style.opacity = 1;
+    hoverImg.style.opacity = 0;
+  });
+</script>
+
+</body>
+</html>
