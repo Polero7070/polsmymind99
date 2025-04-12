@@ -18,7 +18,6 @@
       cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
     }
 
-    /* Mantener el cursor personalizado sobre elementos clickeables */
     a, button, input, .pictogram-container, .submenu a {
       cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
     }
@@ -97,11 +96,12 @@
 
     .garabatos {
       position: absolute;
-      top: -110px;
+      top: 0;
       left: 0;
       width: 100%;
-      height: 130%;
+      height: 100%;
       z-index: 1;
+      overflow: hidden;
     }
 
     .garabatos img {
@@ -110,35 +110,43 @@
       object-fit: cover;
     }
 
+    .pictogram-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+
     .pictogram-container {
       width: 800px;
       height: 1100px;
       position: relative;
-      z-index: 2;
       animation: mover 8s ease-in-out infinite alternate;
     }
 
     .pictogram-container img {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      object-fit: contain;
       transition: opacity 0.4s ease;
-      pointer-events: auto;
+      pointer-events: none;
     }
 
     #pictogramHover {
       opacity: 0;
     }
 
+    .pictogram-container:hover {
+      animation-play-state: paused;
+    }
+
     @keyframes mover {
       0% { transform: translateX(0); }
       100% { transform: translateX(50vw); }
-    }
-
-    .pictogram-container:hover {
-      animation-play-state: paused;
     }
 
     @media (max-width: 768px) {
@@ -157,8 +165,7 @@
       position: relative;
     }
 
-    .glitch::before,
-    .glitch::after {
+    .glitch::before {
       content: "";
       position: absolute;
       top: 0;
@@ -184,6 +191,19 @@
       60% { transform: translate(-1px, 1px); }
       80% { transform: translate(1px, -1px); }
       100% { transform: translate(0, 0); }
+    }
+
+    .video-container {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 300px;
+      z-index: 2;
+    }
+
+    .video-container video {
+      width: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -213,15 +233,15 @@
 <div class="content">
   <div class="garabatos">
     <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
-    <a href="shop.html" class="pictogram-link">
-      <div class="pictogram-container glitch" id="pictogramContainer">
-        <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-        <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
-      </div>
-    </a>
-    <div class="video-container">
-      <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
+  </div>
+  <a href="shop.html" class="pictogram-link">
+    <div class="pictogram-container glitch" id="pictogramContainer">
+      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
     </div>
+  </a>
+  <div class="video-container">
+    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
   </div>
 </div>
 
