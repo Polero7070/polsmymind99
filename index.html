@@ -1,209 +1,156 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>POLS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<cabeza>
+    body {
+      font-family: 'Patrick Hand', cursive;
+      overflow: hidden;
+    }
 
-<meta charset="UTF-8" />
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+      border-bottom: 2px solid black;
+      position: relative;
+      z-index: 10;
+    }
 
-<meta name="viewport" content="ancho=ancho-del-dispositivo, escala-inicial=1.0"/>
+    .rev {
+      font-size: 16px;
+      color: black;
+    }
 
-<title>POLS</title>
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="hoja de estilo">
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: normal;
+      text-transform: lowercase;
+    }
 
-<estilo>
+    .content {
+      height: calc(100vh - 50px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
 
-* {
+    .garabatos {
+      position: absolute;
+      top: -120px;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      z-index: 1;
+    }
 
-margen: 0;
+    .garabatos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-relleno: 0;
+    .pictogram-container {
+      width: 800px;
+      height: 1100px;
+      position: relative;
+      z-index: 2;
+      animation: mover 8s ease-in-out infinite alternate;
+    }
 
-tamaño de caja: caja de borde;
-}
-body {
-  font-family: 'Patrick Hand', cursive;
-  overflow: hidden;
-}
+    .pictogram-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      transition: opacity 0.4s ease;
+      pointer-events: auto;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: white;
-  border-bottom: 2px solid black;
-  position: relative;
-  z-index: 10;
-}
+    #pictogramHover {
+      opacity: 0;
+    }
 
-.rev {
-  font-size: 16px;
-  color: black;
-}
+    @keyframes mover {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50vw); }
+    }
 
-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+    .pictogram-container:hover {
+      animation-play-state: paused;
+    }
 
-nav > div {
-  position: relative;
-}
+    .video-container {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 300px;
+      height: 180px;
+      z-index: 3;
+      border: 2px solid black;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
 
-nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: normal;
-  text-transform: lowercase;
-}
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
 
-.submenu {
-  display: none;
-  position: absolute;
-  left: -40px;
-  top: 100%;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  border-radius: 5px;
-  padding: 5px 10px;
-  flex-direction: column;
-  white-space: nowrap;
-  min-width: 120px;
-}
+<header>
+  <div class="rev">rev 2025</div>
+  <nav>
+    <div>
+      <a href="#">shop online</a>
+      <div class="submenu">
+        <a href="#">prendas superiores</a>
+        <a href="#">prendas inferiores</a>
+        <a href="#">accesorios</a>
+      </div>
+    </div>
+    <a href="#">guía de tallas</a>
+    <div>
+      <a href="#">contacto</a>
+      <div class="submenu">
+        <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
+      </div>
+    </div>
+  </nav>
+</header>
 
-nav > div:hover .submenu {
-  display: flex;
-}
-
-.submenu a {
-  font-size: 12px;
-  padding: 5px 10px;
-  transition: background-color 0.2s ease;
-  text-align: left;
-}
-
-.submenu a:hover {
-  background-color: #eee;
-}
-
-.content {
-  height: calc(100vh - 50px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.garabatos {
-  position: absolute;
-  top: -120px;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  z-index: 1;
-}
-
-.garabatos img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.pictogram-container {
-  width: 800px;
-  height: 1100px;
-  position: relative;
-  z-index: 2;
-  animation: mover 8s ease-in-out infinite alternate;
-}
-
-.pictogram-container img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  transition: opacity 0.4s ease;
-  pointer-events: auto;
-}
-
-#pictogramHover {
-  opacity: 0;
-}
-
-@keyframes mover {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50vw); }
-}
-
-.pictogram-container:hover {
-  animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-  .pictogram-container {
-    width: 400px;
-    height: 800px;
-  }
-
-  @keyframes mover {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(30vw); }
-  }
-}
-
-.glitch {
-  position: relative;
-}
-
-.glitch::before,
-.glitch::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.pictogram-container:hover .glitch::before {
-  background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
-  animation: glitchAnim 0.5s infinite linear;
-  opacity: 0.8;
-}
-
-@keyframes glitchAnim {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-2px, -2px); }
-  40% { transform: translate(2px, 2px); }
-  60% { transform: translate(-1px, 1px); }
-  80% { transform: translate(1px, -1px); }
-  100% { transform: translate(0, 0); }
-}
-
-.video-container {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  width: 300px;
-  height: 180px;
-  z-index: 3;
-  border: 2px solid black;
-  border-radius: 8px;
-  overflow: hidden;
-  background: white;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+<div class="content">
+  <div class="garabatos">
+    <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
+  </div>
+  <div class="pictogram-container" id="pictogramContainer">
+    <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+    <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
+  </div>
+  <div class="video-container">
+    <video src="https://github.com/
