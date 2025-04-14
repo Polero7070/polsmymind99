@@ -96,7 +96,7 @@
 
     .perchero {
       position: absolute;
-      top: 80px; /* Ajustado para estar alineado con la parte superior de la ropa */
+      top: 0;
       left: 0;
       width: 100%;
       height: auto;
@@ -132,9 +132,9 @@
 
     .pictogram-link {
       position: absolute;
-      top: 30px; /* Ajustado para acercar el pictograma a la barra de menú */
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       z-index: 3;
     }
 
@@ -303,7 +303,36 @@
       <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
     </div>
   </a>
+  <perchero {
+      position: absolute;
+      top: 40%; /* Baja la posición del perchero */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; /* Ocupa todo el ancho */
+      z-index: 1;
+    }
 
+    .perchero img {
+      width: 100%;
+      height: auto;
+    }
+
+    .ropa-container {
+      position: absolute;
+      top: 45%; /* Justo en la parte inferior del perchero */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; /* Mantener el ancho del perchero */
+      z-index: 1; /* Asegura que la ropa esté detrás del pictograma */
+    }
+
+    .ropa-container img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
   <!-- Video -->
   <div class="video-container">
     <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
