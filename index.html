@@ -94,9 +94,45 @@
       z-index: 1;
     }
 
+    .perchero {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 0;
+    }
+
+    .perchero img.palo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .ropa-container {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 800px;
+      height: auto;
+      animation: mover 8s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    .ropa-container img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @keyframes mover {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50vw); }
+    }
+
     .pictogram-link {
       position: absolute;
-      top: 15%; /* Ajustar la posición del pictograma */
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
@@ -104,7 +140,7 @@
 
     .pictogram-container {
       width: 800px;
-      height: 1100px;
+      height: 1300px;
       position: relative;
       animation: mover 8s ease-in-out infinite alternate;
     }
@@ -128,23 +164,6 @@
       animation-play-state: paused;
     }
 
-    @keyframes mover {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(50vw); }
-    }
-
-    @media (max-width: 768px) {
-      .pictogram-container {
-        width: 400px;
-        height: 800px;
-      }
-
-      @keyframes mover {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(30vw); }
-      }
-    }
-
     .glitch {
       position: relative;
     }
@@ -157,34 +176,119 @@
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0;
+      pointer-events: none;
     }
 
+    .pictogram-container:hover .glitch::before {
+      background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
+      animation: glitchAnim 0.5s infinite linear;
+      opacity: 0.8;
+    }
+
+    @keyframes glitchAnim {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .video-container {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 300px;
+      z-index: 2;
+    }
+
+    .video-container video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .pictogram-container {
+        width: 400px;
+        height: 1000px;
+      }
+
+      .ropa-container {
+        width: 400px;
+      }
+
+      @keyframes mover {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(30vw); }
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="rev">POLS</div>
+  <div class="rev">rev 2025</div>
   <nav>
     <div>
-      <a href="#">Inicio</a>
+      <a href="shop.html">shop online</a>
+      <ul class="submenu">
+        <li><a href="superiores.html">Prendas superiores</a></li>
+        <li><a href="inferiores.html">Prendas inferiores</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+      </ul>
+    </div>
+    <a href="#">guía de tallas</a>
+    <div>
+      <a href="#">contacto</a>
       <div class="submenu">
-        <a href="#">Submenú 1</a>
-        <a href="#">Submenú 2</a>
-        <a href="#">Submenú 3</a>
+        <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
       </div>
     </div>
-    <a href="#">Nosotros</a>
-    <a href="#">Tienda</a>
   </nav>
 </header>
 
 <div class="content">
-  <div class="pictogram-container">
-    <img src="https://via.placeholder.com/800x1100" alt="Pictograma">
+  <!-- Palo fijo -->
+  <div class="perchero">
+    <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(1).png?raw=true" alt="Palo del perchero">
   </div>
-  <a href="#" class="pictogram-link">Ver más</a>
+
+  <!-- Ropa que se mueve -->
+  <div class="ropa-container">
+    <img src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa.png?raw=true" alt="Ropa colgada">
+  </div>
+
+  <!-- Pictograma -->
+  <a href="shop.html" class="pictogram-link">
+    <div class="pictogram-container glitch" id="pictogramContainer">
+      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
+    </div>
+  </a>
+
+  <!-- Video -->
+  <div class="video-container">
+    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
+  </div>
 </div>
+
+<script>
+  const container = document.getElementById('pictogramContainer');
+  const defaultImg = document.getElementById('pictogramDefault');
+  const hoverImg = document.getElementById('pictogramHover');
+
+  container.addEventListener('mouseenter', () => {
+    defaultImg.style.opacity = 0;
+    hoverImg.style.opacity = 1;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    defaultImg.style.opacity = 1;
+    hoverImg.style.opacity = 0;
+  });
+</script>
 
 </body>
 </html>
