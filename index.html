@@ -1,265 +1,324 @@
 <!DOCTYPE html>
+
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>POLS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Patrick Hand', cursive;
-      overflow: hidden;
-      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
-    }
+<cabeza>
 
-    a, button, input, .pictogram-container, .submenu a {
-      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
-    }
+<meta charset="UTF-8" />
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: white;
-      border-bottom: 2px solid black;
-      position: relative;
-      z-index: 10;
-    }
+<meta name="viewport" content="ancho=ancho-del-dispositivo, escala-inicial=1.0"/>
 
-    .rev {
-      font-size: 16px;
-      color: black;
-    }
+<title>POLS</title>
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="hoja de estilo">
 
-    nav > div {
-      position: relative;
-    }
+<estilo>
 
-    nav a {
-      text-decoration: none;
-      color: black;
-      font-weight: normal;
-      text-transform: lowercase;
-    }
+* {
 
-    .submenu {
-      display: none;
-      position: absolute;
-      left: -40px;
-      top: 100%;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-      border-radius: 5px;
-      padding: 5px 10px;
-      flex-direction: column;
-      white-space: nowrap;
-      min-width: 120px;
-    }
+margen: 0;
 
-    nav > div:hover .submenu {
-      display: flex;
-    }
+relleno: 0;
 
-    .submenu a {
-      font-size: 12px;
-      padding: 5px 10px;
-      transition: background-color 0.2s ease;
-      text-align: left;
-    }
+tamaño de caja: caja de borde;
 
-    .submenu a:hover {
-      background-color: #eee;
-    }
+}
 
-    .content {
-      height: calc(100vh - 50px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
+scss
+Copiar
+body {
+  font-family: 'Patrick Hand', cursive;
+  overflow: hidden;
+  cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
+}
 
-    .garabatos {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-    }
+a, button, input, .pictogram-container, .submenu a {
+  cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
+}
 
-    .garabatos img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 2px solid black;
+  position: relative;
+  z-index: 10;
+}
 
-    .pictogram-link {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-    }
+.rev {
+  font-size: 16px;
+  color: black;
+}
 
-    .pictogram-container {
-      width: 800px;
-      height: 1100px;
-      position: relative;
-      animation: mover 8s ease-in-out infinite alternate;
-    }
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    .pictogram-container img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
+nav > div {
+  position: relative;
+}
 
-    #pictogramHover {
-      opacity: 0;
-    }
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  text-transform: lowercase;
+}
 
-    .pictogram-container:hover {
-      animation-play-state: paused;
-    }
+.submenu {
+  display: none;
+  position: absolute;
+  left: -40px;
+  top: 100%;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border-radius: 5px;
+  padding: 5px 10px;
+  flex-direction: column;
+  white-space: nowrap;
+  min-width: 120px;
+}
 
-    @keyframes mover {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(50vw); }
-    }
+nav > div:hover .submenu {
+  display: flex;
+}
 
-    @media (max-width: 768px) {
-      .pictogram-container {
-        width: 400px;
-        height: 800px;
-      }
+.submenu a {
+  font-size: 12px;
+  padding: 5px 10px;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
 
-      @keyframes mover {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(30vw); }
-      }
-    }
+.submenu a:hover {
+  background-color: #eee;
+}
 
-    .glitch {
-      position: relative;
-    }
+.content {
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
 
-    .glitch::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      opacity: 0;
-      pointer-events: none;
-    }
+.garabatos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
 
-    .pictogram-container:hover .glitch::before {
-      background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
-      animation: glitchAnim 0.5s infinite linear;
-      opacity: 0.8;
-    }
+.garabatos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    @keyframes glitchAnim {
-      0% { transform: translate(0, 0); }
-      20% { transform: translate(-2px, -2px); }
-      40% { transform: translate(2px, 2px); }
-      60% { transform: translate(-1px, 1px); }
-      80% { transform: translate(1px, -1px); }
-      100% { transform: translate(0, 0); }
-    }
+.pictogram-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
 
-    .video-container {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 300px;
-      z-index: 2;
-    }
+.pictogram-container {
+  width: 800px;
+  height: 1100px;
+  position: relative;
+  animation: mover 8s ease-in-out infinite alternate;
+}
 
-    .video-container video {
-      width: 100%;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
+.pictogram-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
 
-<header>
-  <div class="rev">rev 2025</div>
-  <nav>
-    <div>
-      <a href="shop.html">shop online</a>
-      <div class="submenu">
-        <a href="#">prendas superiores</a>
-        <a href="#">prendas inferiores</a>
-        <a href="#">accesorios</a>
-      </div>
-    </div>
-    <a href="#">guía de tallas</a>
-    <div>
-      <a href="#">contacto</a>
-      <div class="submenu">
-        <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
-      </div>
-    </div>
-  </nav>
-</header>
+#pictogramHover {
+  opacity: 0;
+}
 
-<div class="content">
-  <div class="garabatos">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
-  </div>
-  <a href="shop.html" class="pictogram-link">
-    <div class="pictogram-container glitch" id="pictogramContainer">
-      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
-    </div>
-  </a>
-  <div class="video-container">
-    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
-  </div>
+.pictogram-container:hover {
+  animation-play-state: paused;
+}
+
+@keyframes mover {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50vw); }
+}
+
+@media (max-width: 768px) {
+  .pictogram-container {
+    width: 400px;
+    height: 800px;
+  }
+
+  @keyframes mover {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(30vw); }
+  }
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pictogram-container:hover .glitch::before {
+  background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
+  animation: glitchAnim 0.5s infinite linear;
+  opacity: 0.8;
+}
+
+@keyframes glitchAnim {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.video-container {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  z-index: 2;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 10px;
+}
+</estilo>
+
+</cabeza>
+
+<cuerpo>
+
+<encabezado>
+
+<div class="rev">rev 2025</div>
+
+<navegación>
+
+<div>
+
+<a href="shop.html">Comprar en línea</a>
+
+<div class="submenu">
+
+<a href="#">prendas superiores</a>
+
+<a href="#">prendas inferiores</a>
+
+<a href="#">Accesorios</a>
+
 </div>
 
-<script>
-  const container = document.getElementById('pictogramContainer');
-  const defaultImg = document.getElementById('pictogramDefault');
-  const hoverImg = document.getElementById('pictogramHover');
+</div>
 
-  container.addEventListener('mouseenter', () => {
-    defaultImg.style.opacity = 0;
-    hoverImg.style.opacity = 1;
-  });
+<a href="#">guía de tallas</a>
 
-  container.addEventListener('mouseleave', () => {
-    defaultImg.style.opacity = 1;
-    hoverImg.style.opacity = 0;
-  });
+<div>
+
+<a href="#">Contacto</a>
+
+<div class="submenu">
+
+<a href="https://www.instagram.com/polsmymind__" target="_blank">Instagram</a>
+
+</div>
+
+</div>
+
+</nav>
+
+</encabezado>
+
+<div class="contenido">
+
+<div class="garabatos">
+
+<img src="https://github.com/Polero7070/polsmymind99/blob/main/1.png?raw=true" alt="Garabatos">
+
+</div>
+
+<a href="tienda.html" class="enlace-pictograma">
+
+<div class="error del contenedor de pictogramas" id="pictogramContainer">
+
+<img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+
+<img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma al pasar el mouse">
+
+</div>
+
+</a>
+
+<div class="contenedor-de-video">
+
+<video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" bucle de reproducción automática silenciado></video>
+
+</div>
+
+</div>
+
+<guión>
+
+const contenedor = document.getElementById('pictogramContainer');
+
+const defaultImg = document.getElementById('pictogramDefault');
+
+const hoverImg = document.getElementById('pictogramHover');
+
+contenedor.addEventListener('mouseenter', () => {
+
+defaultImg.style.opacity = 0;
+
+hoverImg.style.opacity = 1;
+
+});
+
+contenedor.addEventListener('mouseleave', () => {
+
+defaultImg.style.opacity = 1;
+
+hoverImg.style.opacity = 0;
+
+});
+
 </script>
 
-</body>
+</cuerpo>
+
 </html>
