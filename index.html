@@ -209,6 +209,33 @@
       border-radius: 10px;
     }
 
+    .scroll-text {
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 4;
+    }
+
+    .scroll-text span {
+      display: inline-block;
+      font-size: 30px;
+      padding-left: 100%;
+      animation: scroll-left 12s linear infinite;
+      color: black;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
     @media (max-width: 768px) {
       .pictogram-container {
         width: 400px;
@@ -222,6 +249,10 @@
       @keyframes mover {
         0% { transform: translateX(0); }
         100% { transform: translateX(30vw); }
+      }
+
+      .scroll-text span {
+        font-size: 20px;
       }
     }
   </style>
@@ -250,6 +281,11 @@
 </header>
 
 <div class="content">
+  <!-- Texto animado -->
+  <div class="scroll-text">
+    <span>¿DÓNDE ESTÁ POLS? / SHOP DROP 05/05 / ASTOR BIRRA SETS EN VIVO / ¿DÓNDE ESTÁ POLS? / SHOP DROP 05/05...</span>
+  </div>
+
   <!-- Palo fijo -->
   <div class="perchero">
     <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(1).png?raw=true" alt="Palo del perchero">
