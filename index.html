@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>POLS</title>
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
@@ -127,7 +127,7 @@
     }
     @keyframes move {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(100vw - 100%)); } /* Ajuste para evitar desbordamiento */
+      100% { transform: translateX(calc(100vw - 100%)); }
     }
     @media (max-width: 768px) {
       .pictogram-container {
@@ -137,34 +137,6 @@
         0% { transform: translateX(0); }
         100% { transform: translateX(calc(100vw - 80vw)); }
       }
-    }
-    .glitch {
-      position: relative;
-    }
-    .glitch::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .pictogram-container:hover .glitch::before {
-      background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
-      animation: glitchAnim 0.5s infinite linear;
-      opacity: 0.8;
-    }
-    @keyframes glitchAnim {
-      0% { transform: translate(0, 0); }
-      20% { transform: translate(-2px, -2px); }
-      40% { transform: translate(2px, 2px); }
-      60% { transform: translate(-1px, 1px); }
-      80% { transform: translate(1px, -1px); }
-      100% { transform: translate(0, 0); }
     }
     .video-container {
       position: absolute;
@@ -186,8 +158,8 @@
       <div>
         <a href="shop.html">Compra online</a>
         <ul class="submenu">
-          <li><a href="superiores.html">Prendas superiores</a></li>
-          <li><a href="inferiores.html">Prendas inferiores</a></li>
+          <li><a href="prendas-superiores.html">Prendas superiores</a></li>
+          <li><a href="prendas-inferiores.html">Prendas inferiores</a></li>
           <li><a href="accesorios.html">Accesorios</a></li>
         </ul>
       </div>
@@ -208,7 +180,7 @@
 
     <a href="tienda.html" class="pictogram-link">
       <div class="pictogram-container glitch" id="pictogramContainer">
-        <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+        <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/picto%20real.png?raw=true" alt="Pictograma original">
         <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
       </div>
     </a>
@@ -235,5 +207,3 @@
   </script>
 </body>
 </html>
-   
-   
