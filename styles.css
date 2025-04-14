@@ -1,11 +1,11 @@
+/* Estilo del cursor personalizado */
 body {
-  cursor: url('URL_DEL_CURSOR.png'), auto;
+  font-family: 'Patrick Hand', cursive;
+  overflow: hidden;
+  cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
 }
 
-.submenu a {
-  cursor: url('https://raw.githubusercontent.com/Polero7070/polsmymind99/main/P%20(2).png'), auto;
+a, button, input, .pictogram-container, .submenu a {
+  cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
 }
-
-
-
 
