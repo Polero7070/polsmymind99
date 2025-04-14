@@ -94,42 +94,6 @@
       z-index: 1;
     }
 
-    .perchero {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: 0;
-    }
-
-    .perchero img.palo {
-      width: 100%;
-      height: 20%;
-      object-fit: contain;
-    }
-
-    .ropa-container {
-      position: absolute;
-      top: 30px;
-      left: 0;
-      width: 800px;
-      height: 100px;
-      animation: mover 8s ease-in-out infinite alternate;
-      z-index: 1;
-    }
-
-    .ropa-container img {
-      width: 100%;
-      height: 20%;
-      object-fit: contain;
-    }
-
-    @keyframes mover {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(50vw); }
-    }
-
     .pictogram-link {
       position: absolute;
       top: 50%;
@@ -140,7 +104,7 @@
 
     .pictogram-container {
       width: 800px;
-      height: 1300px;
+      height: 1100px;
       position: relative;
       animation: mover 8s ease-in-out infinite alternate;
     }
@@ -162,6 +126,23 @@
 
     .pictogram-container:hover {
       animation-play-state: paused;
+    }
+
+    @keyframes mover {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50vw); }
+    }
+
+    @media (max-width: 768px) {
+      .pictogram-container {
+        width: 400px;
+        height: 800px;
+      }
+
+      @keyframes mover {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(30vw); }
+      }
     }
 
     .glitch {
@@ -208,53 +189,6 @@
       width: 100%;
       border-radius: 10px;
     }
-
-    .scroll-text {
-      position: absolute;
-      top: 5%;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      z-index: 4;
-    }
-
-    .scroll-text span {
-      display: inline-block;
-      font-size: 30px;
-      padding-left: 100%;
-      animation: scroll-left 12s linear infinite;
-      color: black;
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .pictogram-container {
-        width: 400px;
-        height: 1000px;
-      }
-
-      .ropa-container {
-        width: 400px;
-      }
-
-      @keyframes mover {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(30vw); }
-      }
-
-      .scroll-text span {
-        font-size: 20px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -281,59 +215,12 @@
 </header>
 
 <div class="content">
-  <!-- Texto animado -->
-  <div class="scroll-text">
-    <span>¿DÓNDE ESTÁ POLS? / SHOP DROP 05/05 / ASTOR BIRRA SETS EN VIVO / ¿DÓNDE ESTÁ POLS? / SHOP DROP 05/05...</span>
-  </div>
-
-  <!-- Palo fijo -->
-  <div class="perchero">
-    <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(1).png?raw=true" alt="Palo del perchero">
-  </div>
-
-  <!-- Ropa que se mueve -->
-  <div class="ropa-container">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa.png?raw=true" alt="Ropa colgada">
-  </div>
-
-  <!-- Pictograma -->
   <a href="shop.html" class="pictogram-link">
     <div class="pictogram-container glitch" id="pictogramContainer">
       <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
       <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
     </div>
   </a>
-  <perchero {
-      position: absolute;
-      top: 40%; /* Baja la posición del perchero */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%; /* Ocupa todo el ancho */
-      z-index: 1;
-    }
-
-    .perchero img {
-      width: 100%;
-      height: auto;
-    }
-
-    .ropa-container {
-      position: absolute;
-      top: 45%; /* Justo en la parte inferior del perchero */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%; /* Mantener el ancho del perchero */
-      z-index: 1; /* Asegura que la ropa esté detrás del pictograma */
-    }
-
-    .ropa-container img {
-      width: 100%;
-      height: auto;
-    }
-  </style>
-</head>
-<body>
-  <!-- Video -->
   <div class="video-container">
     <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
   </div>
