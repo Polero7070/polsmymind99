@@ -13,7 +13,7 @@
     }
     body {
       font-family: 'Patrick Hand', cursive;
-      overflow: hidden;
+      overflow-x: hidden; /* Permitir scroll vertical */
       cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
     }
     a, button, input, .pictogram-container, .submenu a {
@@ -103,8 +103,9 @@
       z-index: 3;
     }
     .pictogram-container {
-      width: 800px;
-      height: 1100px;
+      width: 60vw; /* Ancho relativo */
+      max-width: 800px;
+      height: auto; /* Ajustar altura automáticamente */
       position: relative;
       animation: move 8s ease-in-out infinite alternate;
     }
@@ -126,16 +127,15 @@
     }
     @keyframes move {
       0% { transform: translateX(0); }
-      100% { transform: translateX(50vw); }
+      100% { transform: translateX(calc(100vw - 100%)); } /* Ajuste para evitar desbordamiento */
     }
     @media (max-width: 768px) {
       .pictogram-container {
-        width: 400px;
-        height: 800px;
+        width: 80vw; /* Reducir ancho en pantallas pequeñas */
       }
       @keyframes move {
         0% { transform: translateX(0); }
-        100% { transform: translateX(30vw); }
+        100% { transform: translateX(calc(100vw - 80vw)); }
       }
     }
     .glitch {
