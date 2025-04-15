@@ -224,15 +224,67 @@
       }
 
       .pictogram-container {
-        width: 0%;
-        max-width: 200px;
-        margin: auto;
-      }
+      width: 800px;
+      height: 1300px;
+      position: relative;
+      animation: mover 8s ease-in-out infinite alternate;
+    }
+
+    .pictogram-container img {
+      position: absolute;
+      top: -115px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    #pictogramHover {
+      opacity: 0;
+    }
+
+    .pictogram-container:hover {
+      animation-play-state: paused;
+    }
+
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .pictogram-container:hover .glitch::before {
+      background-image: url('https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true');
+      animation: glitchAnim 0.5s infinite linear;
+      opacity: 0.8;
+    }
+
+    @keyframes glitchAnim {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0, 0); }
 
       .ropa-container {
         width: 100%;
         max-width: 450px;
-        top: 200px;
+        top: 80px;
         margin: 0 auto;
       }
 
