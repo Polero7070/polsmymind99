@@ -96,9 +96,9 @@
 
     .perchero {
       position: absolute;
-      top: 320px;
+      top: 200px; /* Moved down the perchero */
       left: 0;
-      width: 120%;
+      width: 100%;
       height: auto;
       z-index: 0;
     }
@@ -111,9 +111,9 @@
 
     .ropa-container {
       position: absolute;
-      top: 450px;
+      top: 380px; /* Adjusted position for better alignment */
       left: 0;
-      width: 800px;
+      width: 1000px; /* Increased width for bigger clothing */
       height: auto;
       animation: mover 8s ease-in-out infinite alternate;
       z-index: 1;
@@ -129,6 +129,7 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(30vw); }
     }
+
     .pictogram-container {
       width: 1000px; /* Increased width for pictogram container */
       height: 1300px;
@@ -146,12 +147,7 @@
       transition: opacity 0.4s ease;
       pointer-events: none;
     }
-    .pictogram-container {
-      width: 600px;
-      height: 800px;
-      position: relative;
-      animation: mover 8s ease-in-out infinite alternate;
-    }
+
     #pictogramHover {
       opacity: 0;
     }
@@ -226,13 +222,13 @@
       .pictogram-container {
         width: 100%;
         height: auto;
-        max-width: 200px;
+        max-width: 400px;
       }
 
       .ropa-container {
         width: 90%;
         max-width: 400px;
-        top: 340px;
+        top: 250px;
         animation: moverMobile 8s ease-in-out infinite alternate;
       }
 
@@ -312,3 +308,4 @@
 
 </body>
 </html>
+
