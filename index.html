@@ -236,6 +236,7 @@
       transition: opacity 0.4s ease;
       pointer-events: none;
     }
+
       .perchero {
       position: absolute;
       top: 270px; /* Moved down the perchero */
@@ -266,6 +267,7 @@
       height: auto;
       object-fit: contain;
     }
+
       .video-container {
         width: 90%;
         max-width: 300px;
@@ -277,6 +279,11 @@
         0% { transform: translateX(0); }
         100% { transform: translateX(50vw); }
       }
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
     }
   </style>
 </head>
@@ -330,16 +337,14 @@
   const hoverImg = document.getElementById('pictogramHover');
 
   container.addEventListener('mouseenter', () => {
-    defaultImg.style.opacity = 0;
-    hoverImg.style.opacity = 1;
+    defaultImg.style.opacity = '0';
+    hoverImg.style.opacity = '1';
   });
 
   container.addEventListener('mouseleave', () => {
-    defaultImg.style.opacity = 1;
-    hoverImg.style.opacity = 0;
+    defaultImg.style.opacity = '1';
+    hoverImg.style.opacity = '0';
   });
 </script>
-
 </body>
 </html>
-
