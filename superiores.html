@@ -66,7 +66,7 @@
             cursor: pointer;
         }
 
-        /* Ícono del carrito y contador */
+        /* Contenedor del carrito */
         .cart-container {
             position: fixed;
             top: 20px;
@@ -80,15 +80,25 @@
         .cart-icon {
             width: 40px;
             cursor: pointer;
+            position: relative;
         }
 
+        /* Círculo rojo del contador */
         #contador {
+            position: absolute;
+            top: -5px;
+            right: -5px;
             font-weight: bold;
-            font-size: 1.2rem;
-            color: #000;
-            background-color: #f1f1f1;
-            padding: 5px 10px;
-            border-radius: 5px;
+            font-size: 0.8rem;
+            color: #fff;
+            background-color: red;
+            padding: 5px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
