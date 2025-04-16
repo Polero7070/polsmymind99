@@ -204,10 +204,11 @@
 
     /* Estilo del carrito */
     .cart-icon-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-left: 20px;
     }
 
     .cart-icon {
@@ -322,13 +323,12 @@
         <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
       </div>
     </div>
+    <!-- Carrito agregado al final de la barra -->
+    <div class="cart-icon-container">
+      <img src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" class="cart-icon">
+    </div>
   </nav>
 </header>
-
-<!-- Aquí se encuentra el carrito -->
-<div class="cart-icon-container">
-  <img src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" class="cart-icon">
-</div>
 
 <div class="content">
   <div class="perchero">
