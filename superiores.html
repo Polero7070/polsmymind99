@@ -66,39 +66,39 @@
             cursor: pointer;
         }
 
-        .cart-icon {
+        /* Ícono del carrito y contador */
+        .cart-container {
             position: fixed;
             top: 20px;
             right: 20px;
-            width: 40px;
-            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             z-index: 999;
         }
 
-        #carrito {
-            position: fixed;
-            top: 20px;
-            right: 80px;
-            background-color: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        .cart-icon {
+            width: 40px;
+            cursor: pointer;
         }
 
-        #carrito span {
+        #contador {
             font-weight: bold;
+            font-size: 1.2rem;
+            color: #000;
+            background-color: #f1f1f1;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <!-- Carrito -->
-    <div id="carrito">
-        <span>Carrito: </span>
+    <!-- Contenedor del carrito con ícono y contador -->
+    <div class="cart-container">
+        <img class="cart-icon" src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" />
         <span id="contador">0</span>
     </div>
-
-    <!-- Ícono de carrito -->
-    <img class="cart-icon" src="URL_ICONO_CARRITO" alt="Carrito" />
 
     <h1>Prendas Superiores</h1>
 
@@ -151,32 +151,27 @@
         </div>
     </div>
 
-    <!-- Script que redirige al tocar el ícono de carrito -->
+    <!-- Script para actualizar el contador -->
     <script>
-        const carts = document.querySelectorAll('.cart-icon');
-        carts.forEach(cart => {
-            cart.addEventListener('click', () => {
-            });
+        const cartIcon = document.querySelector('.cart-icon');
+        cartIcon.addEventListener('click', () => {
+            alert('Redirigir a la página del carrito');
         });
 
-        // Actualizar contador del carrito
         function actualizarContador() {
             let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             document.getElementById('contador').textContent = carrito.length;
         }
 
+        function addToCart(nombre, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ nombre, precio });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(nombre + " se agregó al carrito");
+            actualizarContador();
+        }
+
         actualizarContador();
     </script>
-<script>
-  function addToCart(nombre, precio) {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    carrito.push({ nombre, precio });
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-
-    alert(nombre + " se agregó al carrito");
-    actualizarContador();
-  }
-</script>
 </body>
 </html>
