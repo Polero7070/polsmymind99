@@ -131,25 +131,14 @@
             <button onclick="addToCart('Remera POLS 2025.01', 23000)">Añadir al carrito</button>
         </div>
     </div>
-
-    <!-- Script que redirige al tocar el ícono de carrito -->
     <script>
-        const carts = document.querySelectorAll('.cart-icon');
-        carts.forEach(cart => {
-            cart.addEventListener('click', () => {
-                window.location.href = 'carrito.html';
-            });
+    const carts = document.querySelectorAll('.cart-icon');
+    carts.forEach(cart => {
+        cart.addEventListener('click', () => {
+            window.location.href = 'carrito.html'; // redirige al nuevo carrito
         });
-    </script>
-<script>
-  function addToCart(nombre, precio) {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    carrito.push({ nombre, precio });
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-
-    alert(nombre + " se agregó al carrito");
-  }
+    });
+</script>
 </script>
 </body>
 </html>
