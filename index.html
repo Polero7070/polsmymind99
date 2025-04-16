@@ -24,8 +24,8 @@
 
     header {
       display: flex;
-      justify-content: center; /* Centra horizontalmente los elementos */
-      align-items: center; /* Centra verticalmente los elementos */
+      justify-content: center;
+      align-items: center;
       padding: 10px 20px;
       background-color: white;
       border-bottom: 2px solid black;
@@ -40,14 +40,14 @@
 
     .navbar {
       display: flex;
-      justify-content: center; /* Centra horizontalmente */
-      align-items: center; /* Centra verticalmente */
-      gap: 30px; /* Espaciado entre elementos */
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
     }
 
     .navbar-item {
       position: relative;
-      padding-bottom: 10px; /* Ajuste de espaciado */
+      padding-bottom: 10px;
     }
 
     .navbar-item:hover .submenu {
@@ -65,7 +65,7 @@
       z-index: 999;
       border-radius: 5px;
       padding: 10px;
-      margin-top: 5px; /* Margen para evitar colisiones */
+      margin-top: 5px;
     }
 
     .submenu a {
@@ -74,38 +74,12 @@
       text-decoration: none;
       color: black;
       font-weight: normal;
-      transition: background-color 0.2s ease; /* Transición al pasar el mouse */
+      transition: background-color 0.2s ease;
     }
 
     .submenu a:hover {
       background-color: #f0f0f0;
     }
-
-  </style>
-</head>
-<body>
-  <header>
-    <div class="rev">POLS</div>
-    <nav class="navbar">
-      <div class="navbar-item">
-        <a href="#">Menú 1</a>
-        <ul class="submenu">
-          <li><a href="#">Submenú 1</a></li>
-          <li><a href="#">Submenú 2</a></li>
-        </ul>
-      </div>
-      <div class="navbar-item">
-        <a href="#">Menú 2</a>
-        <ul class="submenu">
-          <li><a href="#">Submenú 1</a></li>
-          <li><a href="#">Submenú 2</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-</body>
-</html>
-
 
     .content {
       height: calc(100vh - 50px);
@@ -242,64 +216,42 @@
       }
 
       .pictogram-container {
-      width: 600px;
-      height: 1200px;
-      position: relative;
-      animation: mover 8s ease-in-out infinite alternate;
-    }
+        width: 600px;
+        height: 1200px;
+      }
 
-    .pictogram-container img {
-      position: absolute;
-      top: -435px;
-      left: 0;
-      width: 110%;
-      height: 105%;
-      object-fit: contain;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
+      .pictogram-container img {
+        position: absolute;
+        top: -435px;
+        left: 0;
+        width: 110%;
+        height: 105%;
+        object-fit: contain;
+      }
 
       .perchero {
-      position: absolute;
-      top: 220px; /* Moved down the perchero */
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: 0;
-    }
+        position: absolute;
+        top: 220px;
+      }
 
-    .perchero img.palo {
-      width: 160%;
-      height: auto;
-      object-fit: contain;
-    }
+      .perchero img.palo {
+        width: 160%;
+      }
 
       .ropa-container {
-      position: absolute;
-      top: 300px;
-      left: 0;
-      width: 500px;
-      height: auto;
-      animation: mover 8s ease-in-out infinite alternate;
-      z-index: 1;
-    }
-
-    .ropa-container img {
-      width: 110%;
-      height: auto;
-      object-fit: contain;
-    }
+        position: absolute;
+        top: 300px;
+        left: 0;
+        width: 500px;
+        height: auto;
+        animation: mover 8s ease-in-out infinite alternate;
+      }
 
       .video-container {
         width: 90%;
         max-width: 300px;
         position: static;
         margin-top: 20px;
-      }
-
-      @keyframes moverMobile {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(50vw); }
       }
     }
 
@@ -313,12 +265,10 @@
 
 <header>
   <nav class="navbar">
-    <!-- Ícono del carrito centrado -->
     <div class="navbar-item">
       <img src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" class="navbar-icon">
     </div>
 
-    <!-- SHOP ONLINE -->
     <div class="navbar-item">
       <a href="shop.html">SHOP ONLINE</a>
       <ul class="submenu">
@@ -328,12 +278,10 @@
       </ul>
     </div>
 
-    <!-- GUÍA DE TALLES -->
     <div class="navbar-item">
       <a href="#">GUÍA DE TALLES</a>
     </div>
 
-    <!-- CONTACTO -->
     <div class="navbar-item">
       <a href="#">CONTACTO</a>
       <ul class="submenu">
@@ -342,6 +290,7 @@
     </div>
   </nav>
 </header>
+
 <div class="content">
   <div class="perchero">
     <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(3).png?raw=true" alt="Palo del perchero">
@@ -378,5 +327,6 @@
     hoverImg.style.opacity = '0';
   });
 </script>
+
 </body>
 </html>
