@@ -68,14 +68,12 @@
       flex-direction: column;
       white-space: nowrap;
       min-width: 120px;
-      list-style-type: none; /* Elimina los puntos de lista */
     }
+
     nav > div:hover .submenu {
       display: flex;
     }
-.submenu li {
-  list-style-type: none; /* Asegura que no haya puntos también en los <li> */
-  margin: 5px 0; /* Ajusta el espaciado entre las opciones */
+
     .submenu a {
       font-size: 12px;
       padding: 5px 10px;
@@ -101,7 +99,7 @@
       top: 40px;
       left: 0;
       width: 100%;
-      height: 95%;
+      height: auto;
       z-index: 0;
     }
 
@@ -115,8 +113,8 @@
       position: absolute;
       top: 300px;
       left: 0;
-      width: 800px;
-      height: auto;
+      width: 400px;
+      height: 600;
       animation: mover 8s ease-in-out infinite alternate;
       z-index: 1;
     }
@@ -204,111 +202,109 @@
     }
 
     @media (max-width: 500px) {
-  header {
-    flex-direction: column; /* Cambié a columna para mejor disposición */
-    justify-content: center;
-    padding: 10px 20px;
-  }
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
 
-  nav {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
+      nav {
+        flex-direction: row;
+        gap: 20px;
+      }
 
-  .content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px; /* Para que no quede todo pegado al top */
-  }
+      .content {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
 
-  .pictogram-container {
-    width: 100%;
-    height: auto;
-    position: relative;
-    animation: mover 8s ease-in-out infinite alternate;
-  }
+      .pictogram-container {
+      width: 600px;
+      height: 1200px;
+      position: relative;
+      animation: mover 8s ease-in-out infinite alternate;
+    }
 
-  .pictogram-container img {
-    position: absolute;
-    top: 0; /* Ajusté la posición para que no se desplace demasiado */
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
+    .pictogram-container img {
+      position: absolute;
+      top: -405px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
 
-  .perchero {
-    position: relative;
-    top: 30px; /* Cambié la posición para que no se solape */
-    width: 100%;
-    height: auto;
-    z-index: 0;
-  }
+      .perchero {
+      position: absolute;
+      top: 270px; /* Moved down the perchero */
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 0;
+    }
 
-  .perchero img.palo {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+    .perchero img.palo {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
-  .ropa-container {
-    position: relative;
-    top: 100px;
-    left: 0;
-    width: 80%; /* Ajusté el tamaño para pantallas pequeñas */
-    height: auto;
-    animation: mover 8s ease-in-out infinite alternate;
-    z-index: 1;
-  }
+      .ropa-container {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      width: 500px;
+      height: auto;
+      animation: mover 8s ease-in-out infinite alternate;
+      z-index: 1;
+    }
 
-  .ropa-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+    .ropa-container img {
+      width: 90%;
+      height: auto;
+      object-fit: contain;
+    }
 
-  .video-container {
-    width: 100%;
-    max-width: 300px;
-    position: static;
-    margin-top: 20px;
-  }
+      .video-container {
+        width: 90%;
+        max-width: 300px;
+        position: static;
+        margin-top: 20px;
+      }
 
-  @keyframes moverMobile {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(50vw); }
-  }
-}
+      @keyframes moverMobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(50vw); }
+      }
+    }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="rev">where is pols?</div>
+  <div class="rev">rev 2025</div>
   <nav>
-    <div><a href="#">¿Qué buscas?!?</a>
-<ul class="submenu">
-  <li><a href="superiores.html">superiores</a></li>
-  <li><a href="inferiores.html">inferiores</a></li>
-  <li><a href="accesorios.html">accesorios</a></li>
-</ul>
+    <div>
+      <a href="shop.html">shop online</a>
+      <ul class="submenu">
+        <li><a href="superiores.html">Prendas superiores</a></li>
+        <li><a href="inferiores.html">Prendas inferiores</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
       </ul>
     </div>
-    <a href="talles.html">talles</a>
+    <a href="#">guía de tallas</a>
     <div>
       <a href="#">contacto</a>
       <div class="submenu">
-        <a href="https://www.instagram.com/polsmymind__" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
       </div>
     </div>
   </nav>
