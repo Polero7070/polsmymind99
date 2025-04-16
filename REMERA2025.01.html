@@ -135,20 +135,43 @@
             </select>
         </div>
 
-        <!-- Botón para comprar -->
-        <button class="buy-button" id="buy-button">Comprar</button>
+        <!-- Botón para agregar al carrito -->
+        <button class="buy-button" id="add-to-cart">Agregar al carrito</button>
+
+        <!-- Carrito -->
+        <div class="cart" id="cart">
+            <span>Carrito</span>
+            <div id="cart-details" style="display: none;">
+                <!-- Detalles del carrito aquí -->
+                <p>Remera POLS 2025.01</p>
+                <button id="checkout-button">Ir a Mercado Pago</button>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Función para manejar la compra (puedes personalizarla para integrar con MercadoPago o tu backend)
-        document.getElementById('buy-button').addEventListener('click', function() {
-            // Obtener selección del talle y envío
-            var size = document.getElementById('size').value;
-            var shipping = document.getElementById('shipping').value;
+        // Función para agregar al carrito
+        let cart = [];
+        document.getElementById('add-to-cart').addEventListener('click', function() {
+            const size = document.getElementById('size').value;
+            const shipping = document.getElementById('shipping').value;
+            const product = {
+                name: 'Remera POLS 2025.01',
+                price: 23000,
+                size: size,
+                shipping: shipping,
+            };
+            cart.push(product);
+            console.log(cart);
 
-            alert('¡Producto agregado al carrito!\nTalle: ' + size + '\nMétodo de Envío: ' + shipping);
-            
-            // Aquí puedes agregar la lógica para agregar al carrito o redirigir al proceso de pago
+            // Mostrar detalles del carrito cuando se agrega un producto
+            document.getElementById('cart-details').style.display = 'block';
+        });
+
+        // Redirigir al enlace de Mercado Pago cuando el usuario haga clic en "Ir a Mercado Pago"
+        document.getElementById('checkout-button').addEventListener('click', function() {
+            // Enlace de pago de Mercado Pago
+            window.location.href = 'https://link.mercadopago.com.ar/polsmymind';
         });
     </script>
 
