@@ -43,36 +43,43 @@ header {
       align-items: center; /* Centra verticalmente */
       gap: 30px; /* Espaciado entre elementos */
     }
-  
 
-.navbar-item:hover .submenu {
-  display: block; /* Muestra el submenú al pasar el cursor */
-}
+    .navbar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-.submenu {
-  display: none; /* Oculta el submenú por defecto */
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  position: absolute; /* Posiciona el submenú */
-  top: 100%; /* Asegura que aparezca justo debajo del elemento padre */
-  left: 0;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  border-radius: 5px;
-}
+    .navbar a {
+      text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: black;
+      font-weight: bold;
+    }
 
-.submenu a {
-  display: block;
-  padding: 5px 10px;
-  color: black;
-  text-decoration: none;
-}
+    .navbar-icon {
+      height: 50px;
+    }
 
-.submenu a:hover {
-  background-color: #f0f0f0; /* Agrega un fondo al pasar el cursor por las opciones */
-}
+    .submenu {
+      display: none; /* Oculta el submenú por defecto */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .navbar-item:hover .submenu {
+      display: block*
+    }
+
     .content {
       height: calc(100vh - 50px);
       display: flex;
