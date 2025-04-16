@@ -196,8 +196,10 @@
       z-index: 2;
     }
 
-    .video-container video {
+    .video-container iframe {
       width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
       border-radius: 10px;
     }
 
@@ -220,53 +222,32 @@
       }
 
       .pictogram-container {
-      width: 600px;
-      height: 1200px;
-      position: relative;
-      animation: mover 8s ease-in-out infinite alternate;
-    }
+        width: 600px;
+        height: 1200px;
+      }
 
-    .pictogram-container img {
-      position: absolute;
-      top: -435px;
-      left: 0;
-      width: 110%;
-      height: 105%;
-      object-fit: contain;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
+      .pictogram-container img {
+        top: -435px;
+        width: 110%;
+        height: 105%;
+      }
 
       .perchero {
-      position: absolute;
-      top: 220px; /* Moved down the perchero */
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: 0;
-    }
+        top: 220px;
+      }
 
-    .perchero img.palo {
-      width: 160%;
-      height: auto;
-      object-fit: contain;
-    }
+      .perchero img.palo {
+        width: 160%;
+      }
 
       .ropa-container {
-      position: absolute;
-      top: 300px;
-      left: 0;
-      width: 500px;
-      height: auto;
-      animation: mover 8s ease-in-out infinite alternate;
-      z-index: 1;
-    }
+        top: 300px;
+        width: 500px;
+      }
 
-    .ropa-container img {
-      width: 110%;
-      height: auto;
-      object-fit: contain;
-    }
+      .ropa-container img {
+        width: 110%;
+      }
 
       .video-container {
         width: 90%;
@@ -327,7 +308,7 @@
   </a>
 
   <div class="video-container">
-    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
+    <iframe src="https://www.youtube.com/embed/LTu1x-LgtJk?autoplay=1&mute=1&loop=1&playlist=LTu1x-LgtJk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </div>
 
