@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrito de compras</title>
+  <style>
+    body {
+      font-family: 'Patrick Hand', cursive;
+      text-align: center;
+      padding: 2rem;
+    }
+    .producto {
+      margin-bottom: 1rem;
+    }
+    .boton-comprar {
+      padding: 1rem 2rem;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tu carrito</h1>
+  <div id="lista-carrito"></div>
+  <h2 id="total"></h2>
+  <a id="boton-pago" href="#" target="_blank">
+    <button class="boton-comprar">Ir a pagar</button>
+  </a>
 
+  <script>
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalTexto = document.getElementById('total');
+    const botonPago = document.getElementById('boton-pago');
+
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    let total = 0;
+    carrito.forEach(producto => {
+      const div = document.createElement('div');
+      div.className = 'producto';
+      div.innerText = `${producto.nombre} - $${producto.precio}`;
+      listaCarrito.appendChild(div);
+      total += producto.precio;
+    });
+
+    totalTexto.innerText = `Total: $${total}`;
+
+    // Redirigimos a link fijo de Mercado Pago con el monto total (por ahora manual)
+    // Podés generar diferentes links de MP para distintos totales si querés.
+    botonPago.href = 'https://mpago.la/11sM8iz'; // 👈 Dejá tu link de pago real acá
+  </script>
+</body>
+</html>
