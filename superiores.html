@@ -74,10 +74,31 @@
             cursor: pointer;
             z-index: 999;
         }
+
+        #carrito {
+            position: fixed;
+            top: 20px;
+            right: 80px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #carrito span {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <!-- Carrito -->
+    <div id="carrito">
+        <span>Carrito: </span>
+        <span id="contador">0</span>
+    </div>
 
+    <!-- Ícono de carrito -->
+    <img class="cart-icon" src="URL_ICONO_CARRITO" alt="Carrito" />
 
     <h1>Prendas Superiores</h1>
 
@@ -95,38 +116,38 @@
             <h2>Remera 2025.01</h2>
             <p>$35.000</p>
             <a href="REMERA2025.01.html">
-                <button>Añadir al carrito</button>
+                <button onclick="addToCart('Remera 2025.01', 35000)">Añadir al carrito</button>
             </a>
         </div>
         <div class="product">
             <img src="URL_IMAGEN_REMERA_02" alt="Remera POLS 2025.02" />
             <h2>Remera 2025.02</h2>
-            <p>$35.0000</p>
-           <button onclick="addToCart">añadir al carrito</button>
+            <p>$35.000</p>
+            <button onclick="addToCart('Remera 2025.02', 35000)">Añadir al carrito</button>
         </div>
         <div class="product">
             <img src="URL_IMAGEN_REMERA_03" alt="Remera POLS 2025.03" />
             <h2>Remera 2025.03</h2>
             <p>$35.000</p>
-            <button onclick="addToCart">Añadir al carrito</button>
+            <button onclick="addToCart('Remera 2025.03', 35000)">Añadir al carrito</button>
         </div>
         <div class="product">
             <img src="URL_IMAGEN_REMERA_04" alt="Remera POLS 2025.04" />
             <h2>Remera 2025.04</h2>
             <p>$35.000</p>
-            <button onclick="addToCart)">Añadir al carrito</button>
+            <button onclick="addToCart('Remera 2025.04', 35000)">Añadir al carrito</button>
         </div>
         <div class="product">
             <img src="URL_IMAGEN_REMERA_05" alt="Remera POLS 2025.05" />
             <h2>Remera 2025.05</h2>
             <p>$35.000</p>
-            <button onclick="addToCart('Remera POLS 2025.01', 23000)">Añadir al carrito</button>
+            <button onclick="addToCart('Remera 2025.05', 35000)">Añadir al carrito</button>
         </div>
         <div class="product">
             <img src="URL_IMAGEN_REMERA_06" alt="Remera POLS 2025.06" />
             <h2>Remera 2025.06</h2>
             <p>$25.500</p>
-            <button onclick="addToCart('Remera POLS 2025.01', 23000)">Añadir al carrito</button>
+            <button onclick="addToCart('Remera 2025.06', 25500)">Añadir al carrito</button>
         </div>
     </div>
 
@@ -138,6 +159,14 @@
                 window.location.href = 'https://www.polsmymind.com.ar';
             });
         });
+
+        // Actualizar contador del carrito
+        function actualizarContador() {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            document.getElementById('contador').textContent = carrito.length;
+        }
+
+        actualizarContador();
     </script>
 <script>
   function addToCart(nombre, precio) {
@@ -147,6 +176,7 @@
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
     alert(nombre + " se agregó al carrito");
+    actualizarContador();
   }
 </script>
 </body>
