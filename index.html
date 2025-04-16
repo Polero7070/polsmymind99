@@ -265,107 +265,16 @@
 
 <header>
   <nav class="navbar">
-    <!-- Ícono del carrito centrado -->
     <div class="navbar-item cart-container">
       <img src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" class="navbar-icon">
       <span id="cart-badge" class="cart-badge">0</span>
     </div>
-
-    <!-- SHOP ONLINE -->
     <div class="navbar-item">
       <a href="shop.html">SHOP ONLINE</a>
       <ul class="submenu">
         <li><a href="superiores.html">Prendas superiores</a></li>
-        <li><a href="inferiores.html">Prendas inferiores</a></li>
-        <li><a href="accesorios.html">Accesorios</a></li>
       </ul>
     </div>
-
-    <!-- GUÍA DE TALLES -->
-    <div class="navbar-item">
-      <a href="#">GUÍA DE TALLES</a>
-    </div>
-
-    <!-- CONTACTO -->
-    <div class="navbar-item">
-      <a href="#">CONTACTO</a>
-      <ul class="submenu">
-        <li><a href="https://www.instagram.com/polsmymind__" target="_blank">Instagram</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-<div class="content">
-  <!-- Botón para añadir productos al carrito -->
-  <button id="add-to-cart" style="margin-top: 20px;">Añadir al carrito</button>
-
-  <div class="perchero">
-    <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(3).png?raw=true" alt="Palo del perchero">
-  </div>
-
-  <div class="ropa-container">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/ropa.png?raw=true" alt="Ropa colgada">
-  </div>
-
-  <a href="shop.html" class="pictogram-link">
-    <div class="pictogram-container glitch" id="pictogramContainer">
-      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
-    </div>
-  </a>
-
-  <div class="video-container">
-    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
-  </div>
-</div>
-
-<style>
-  .cart-container {
-    position: relative;
-  }
-
-  .cart-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 12px;
-    display: inline-block;
-  }
-</style>
-
-<script>
-  // Selección de elementos
-  const addToCartButton = document.getElementById('add-to-cart');
-  const cartBadge = document.getElementById('cart-badge');
-
-  // Inicializamos el contador
-  let cartCount = 0;
-
-  // Evento de clic en "Añadir al carrito"
-  addToCartButton.addEventListener('click', () => {
-    cartCount++; // Incrementamos el contador
-    cartBadge.textContent = cartCount; // Actualizamos el badge
-  });
-</script>
-  const container = document.getElementById('pictogramContainer');
-  const defaultImg = document.getElementById('pictogramDefault');
-  const hoverImg = document.getElementById('pictogramHover');
-
-  container.addEventListener('mouseenter', () => {
-    defaultImg.style.opacity = '0';
-    hoverImg.style.opacity = '1';
-  });
-
-  container.addEventListener('mouseleave', () => {
-    defaultImg.style.opacity = '1';
-    hoverImg.style.opacity = '0';
-  });
-<script src="js/carrito.js" defer></script>
-  </script>
+    <!-- Fixes Complete -->
 </body>
 </html>
