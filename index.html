@@ -21,11 +21,10 @@
     a, button, input, .pictogram-container, .submenu a {
       cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
     }
-
-    header {
+header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center; /* Centra horizontalmente los elementos */
+      align-items: center; /* Centra verticalmente los elementos */
       padding: 10px 20px;
       background-color: white;
       border-bottom: 2px solid black;
@@ -38,51 +37,47 @@
       color: black;
     }
 
-    nav {
+    .navbar {
       display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      gap: 30px; /* Espaciado entre elementos */
+    }
+
+    .navbar-item {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 20px;
+      text-align: center;
     }
 
-    nav > div {
-      position: relative;
-    }
-
-    nav a {
+    .navbar a {
       text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
       color: black;
-      font-weight: normal;
-      text-transform: lowercase;
+      font-weight: bold;
+    }
+
+    .navbar-icon {
+      height: 50px;
     }
 
     .submenu {
-      display: none;
+      display: none; /* Oculta el submenú por defecto */
+      list-style: none;
+      padding: 0;
+      margin: 0;
       position: absolute;
-      left: -40px;
-      top: 100%;
       background-color: white;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       z-index: 999;
       border-radius: 5px;
-      padding: 5px 10px;
-      flex-direction: column;
-      white-space: nowrap;
-      min-width: 120px;
+      padding: 10px;
     }
 
-    nav > div:hover .submenu {
-      display: flex;
-    }
-
-    .submenu a {
-      font-size: 12px;
-      padding: 5px 10px;
-      transition: background-color 0.2s ease;
-      text-align: left;
-    }
-
-    .submenu a:hover {
-      background-color: #eee;
+    .navbar-item:hover .submenu {
+      display: block*
     }
 
     .content {
