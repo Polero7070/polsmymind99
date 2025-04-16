@@ -85,6 +85,17 @@
       background-color: #eee;
     }
 
+    .cart-icon {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .cart-icon:hover {
+      transform: scale(1.1);
+    }
+
     .content {
       height: calc(100vh - 50px);
       display: flex;
@@ -202,16 +213,7 @@
       border: none;
       border-radius: 10px;
     }
-.cart-icon {
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  transition: transform 0.2s ease;
-}
 
-.cart-icon:hover {
-  transform: scale(1.1);
-}
     @media (max-width: 500px) {
       header {
         flex-direction: row;
@@ -279,70 +281,68 @@
 </head>
 <body>
 
-<header>
   <header>
-  <div class="rev">rev 2025</div>
-  <nav>
-    <div>
-      <a href="shop.html">shop online</a>
-      <ul class="submenu">
-        <li><a href="superiores.html">Prendas superiores</a></li>
-        <li><a href="inferiores.html">Prendas inferiores</a></li>
-        <li><a href="accesorios.html">Accesorios</a></li>
-      </ul>
-    </div>
-    <a href="#">guía de tallas</a>
-    <div>
-      <a href="#">contacto</a>
-      <div class="submenu">
-        <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
+    <div class="rev">rev 2025</div>
+    <nav>
+      <div>
+        <a href="shop.html">shop online</a>
+        <ul class="submenu">
+          <li><a href="superiores.html">Prendas superiores</a></li>
+          <li><a href="inferiores.html">Prendas inferiores</a></li>
+          <li><a href="accesorios.html">Accesorios</a></li>
+        </ul>
       </div>
+      <a href="#">guía de tallas</a>
+      <div>
+        <a href="#">contacto</a>
+        <div class="submenu">
+          <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
+        </div>
+      </div>
+      <a href="cart.html" class="cart-icon" aria-label="Carrito de compras">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" viewBox="0 0 24 24">
+          <path d="M7 4h-2l-3 7v11h22v-11l-3-7h-2v-1c0-1.103-.897-2-2-2h-8c-1.103 0-2 .897-2 2v1zm2-1h6v1h-6v-1zm10.28 3l2.22 5h-18l2.22-5h13.56zm-15.28 7h18v9h-18v-9z"/>
+        </svg>
+      </a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <div class="perchero">
+      <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(3).png?raw=true" alt="Palo del perchero">
     </div>
-    <a href="cart.html" class="cart-icon" aria-label="Carrito de compras">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" viewBox="0 0 24 24">
-        <path d="M7 4h-2l-3 7v11h22v-11l-3-7h-2v-1c0-1.103-.897-2-2-2h-8c-1.103 0-2 .897-2 2v1zm2-1h6v1h-6v-1zm10.28 3l2.22 5h-18l2.22-5h13.56zm-15.28 7h18v9h-18v-9z"/>
-      </svg>
+
+    <div class="ropa-container">
+      <img src="https://github.com/Polero7070/polsmymind99/blob/main/ropa.png?raw=true" alt="Ropa colgada">
+    </div>
+
+    <a href="shop.html" class="pictogram-link">
+      <div class="pictogram-container glitch" id="pictogramContainer">
+        <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
+        <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
+      </div>
     </a>
-  </nav>
-</header>
 
-</header>
-
-<div class="content">
-  <div class="perchero">
-    <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(3).png?raw=true" alt="Palo del perchero">
-  </div>
-
-  <div class="ropa-container">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/ropa.png?raw=true" alt="Ropa colgada">
-  </div>
-
-  <a href="shop.html" class="pictogram-link">
-    <div class="pictogram-container glitch" id="pictogramContainer">
-      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/LTu1x-LgtJk?autoplay=1&mute=1&loop=1&playlist=LTu1x-LgtJk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-  </a>
-
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/LTu1x-LgtJk?autoplay=1&mute=1&loop=1&playlist=LTu1x-LgtJk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
-</div>
 
-<script>
-  const container = document.getElementById('pictogramContainer');
-  const defaultImg = document.getElementById('pictogramDefault');
-  const hoverImg = document.getElementById('pictogramHover');
+  <script>
+    const container = document.getElementById('pictogramContainer');
+    const defaultImg = document.getElementById('pictogramDefault');
+    const hoverImg = document.getElementById('pictogramHover');
 
-  container.addEventListener('mouseenter', () => {
-    defaultImg.style.opacity = '0';
-    hoverImg.style.opacity = '1';
-  });
+    container.addEventListener('mouseenter', () => {
+      defaultImg.style.opacity = 0;
+      hoverImg.style.opacity = 1;
+    });
 
-  container.addEventListener('mouseleave', () => {
-    defaultImg.style.opacity = '1';
-    hoverImg.style.opacity = '0';
-  });
-</script>
+    container.addEventListener('mouseleave', () => {
+      defaultImg.style.opacity = 1;
+      hoverImg.style.opacity = 0;
+    });
+  </script>
+
 </body>
 </html>
