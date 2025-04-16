@@ -202,6 +202,20 @@
       border-radius: 10px;
     }
 
+    /* Estilo del carrito */
+    .cart-icon-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .cart-icon {
+      width: 50px;
+      height: auto;
+      cursor: pointer;
+    }
+
     @media (max-width: 500px) {
       header {
         flex-direction: row;
@@ -240,7 +254,7 @@
 
       .perchero {
         position: absolute;
-        top: 220px; /* Moved down the perchero */
+        top: 220px;
         left: 0;
         width: 100%;
         height: auto;
@@ -311,41 +325,30 @@
   </nav>
 </header>
 
+<!-- Aquí se encuentra el carrito -->
+<div class="cart-icon-container">
+  <img src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" class="cart-icon">
+</div>
+
 <div class="content">
   <div class="perchero">
     <img class="palo" src="https://github.com/Polero7070/polsmymind99/blob/main/Presentacio%CC%81n%20Manual%20de%20Marca%20Minimalista%20y%20elegante%20%20Rosa%20(3).png?raw=true" alt="Palo del perchero">
   </div>
 
   <div class="ropa-container">
-    <img src="https://github.com/Polero7070/polsmymind99/blob/main/ropa.png?raw=true" alt="Ropa colgada">
+    <img src="https://github.com/Polero7070/polsmymind99/blob/main/ropa.png?raw=true" alt="Prenda en el perchero">
   </div>
 
-  <a href="shop.html" class="pictogram-link">
-    <div class="pictogram-container glitch" id="pictogramContainer">
-      <img id="pictogramDefault" src="https://github.com/Polero7070/polsmymind99/blob/main/2.png?raw=true" alt="Pictograma original">
-      <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/NUEVAN.png?raw=true" alt="Pictograma hover">
-    </div>
-  </a>
+  <div class="pictogram-container">
+    <img id="pictogramHover" src="https://github.com/Polero7070/polsmymind99/blob/main/Pol%20%28%20pictograma%20%29.png?raw=true" alt="Pictograma">
+  </div>
 
   <div class="video-container">
-    <video src="https://github.com/Polero7070/polsmymind99/blob/main/promo_video.mp4?raw=true" autoplay loop muted></video>
+    <video autoplay loop muted>
+      <source src="https://github.com/Polero7070/polsmymind99/blob/main/video.mp4?raw=true" type="video/mp4">
+    </video>
   </div>
 </div>
 
-<script>
-  const container = document.getElementById('pictogramContainer');
-  const defaultImg = document.getElementById('pictogramDefault');
-  const hoverImg = document.getElementById('pictogramHover');
-
-  container.addEventListener('mouseenter', () => {
-    defaultImg.style.opacity = '0';
-    hoverImg.style.opacity = '1';
-  });
-
-  container.addEventListener('mouseleave', () => {
-    defaultImg.style.opacity = '1';
-    hoverImg.style.opacity = '0';
-  });
-</script>
 </body>
 </html>
