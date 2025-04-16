@@ -2,56 +2,126 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Carrito de compras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito POLS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Patrick Hand', cursive;
-      text-align: center;
+      background-color: #fff;
+      margin: 0;
       padding: 2rem;
+      color: #000;
+      text-align: center;
+      cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
     }
-    .producto {
-      margin-bottom: 1rem;
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
     }
-    .boton-comprar {
-      padding: 1rem 2rem;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 5px;
+
+    .cart-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #ccc;
       font-size: 1.2rem;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .total {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .pagar-btn {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: #000;
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .pagar-btn:hover {
+      background-color: #333;
+    }
+
+    .volver {
+      display: block;
+      margin-top: 2rem;
+      font-size: 1rem;
+      text-decoration: underline;
+      color: #000;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Tu carrito</h1>
-  <div id="lista-carrito"></div>
-  <h2 id="total"></h2>
-  <a id="boton-pago" href="#" target="_blank">
-    <button class="boton-comprar">Ir a pagar</button>
-  </a>
+
+  <h1>TU CARRITO</h1>
+
+  <div class="cart-container" id="cartItems"></div>
+
+  <div class="total" id="total"></div>
+
+  <button class="pagar-btn" id="pagarBtn">PAGAR</button>
+
+  <a class="volver" href="index.html">← Volver al inicio</a>
 
   <script>
-    const listaCarrito = document.getElementById('lista-carrito');
-    const totalTexto = document.getElementById('total');
-    const botonPago = document.getElementById('boton-pago');
+    const cartContainer = document.getElementById('cartItems');
+    const totalElement = document.getElementById('total');
+    const pagarBtn = document.getElementById('pagarBtn');
 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    let total = 0;
-    carrito.forEach(producto => {
-      const div = document.createElement('div');
-      div.className = 'producto';
-      div.innerText = `${producto.nombre} - $${producto.precio}`;
-      listaCarrito.appendChild(div);
-      total += producto.precio;
+    function renderCart() {
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      if (carrito.length === 0) {
+        cartContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
+        pagarBtn.style.display = 'none';
+        totalElement.innerHTML = '';
+        return;
+      }
+
+      carrito.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+        itemDiv.innerHTML = `<span>${item.nombre}</span><span>$${item.precio.toLocaleString()}</span>`;
+        cartContainer.appendChild(itemDiv);
+        total += item.precio;
+      });
+
+      totalElement.innerHTML = `Total: $${total.toLocaleString()}`;
+      pagarBtn.style.display = 'inline-block';
+    }
+
+    pagarBtn.addEventListener('click', () => {
+      // Cambiá este link por tu link oficial de pago (generado desde MP)
+      window.location.href = 'https://mpago.la/11sM8iz';
     });
 
-    totalTexto.innerText = `Total: $${total}`;
-
-    // Redirigimos a link fijo de Mercado Pago con el monto total (por ahora manual)
-    // Podés generar diferentes links de MP para distintos totales si querés.
-    botonPago.href = 'https://mpago.la/11sM8iz'; // 👈 Dejá tu link de pago real acá
+    renderCart();
   </script>
 </body>
 </html>
