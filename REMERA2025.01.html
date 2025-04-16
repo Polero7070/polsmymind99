@@ -136,23 +136,10 @@
         </div>
 
         <!-- Botón para comprar, redirige a MercadoPago -->
-<a href="https://mpago.la/11sM8iz" target="_blank">
-    <button class="buy-button" id="buy-button">Comprar</button>
-</a>
+        <a href="https://mpago.la/11sM8iz" target="_blank">
+            <button class="buy-button">Comprar</button>
+        </a>
     </div>
-
-    <script>
-        // Función para manejar la compra (puedes personalizarla para integrar con MercadoPago o tu backend)
-        document.getElementById('buy-button').addEventListener('click', function() {
-            // Obtener selección del talle y envío
-            var size = document.getElementById('size').value;
-            var shipping = document.getElementById('shipping').value;
-
-            alert('¡Producto agregado al carrito!\nTalle: ' + size + '\nMétodo de Envío: ' + shipping);
-            
-            // Aquí puedes agregar la lógica para agregar al carrito o redirigir al proceso de pago
-        });
-    </script>
 
 </body>
 </html>
