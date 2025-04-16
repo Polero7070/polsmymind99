@@ -68,12 +68,14 @@
       flex-direction: column;
       white-space: nowrap;
       min-width: 120px;
+      list-style-type: none; /* Elimina los puntos de lista */
     }
-
     nav > div:hover .submenu {
       display: flex;
     }
-
+.submenu li {
+  list-style-type: none; /* Asegura que no haya puntos también en los <li> */
+  margin: 5px 0; /* Ajusta el espaciado entre las opciones */
     .submenu a {
       font-size: 12px;
       padding: 5px 10px;
