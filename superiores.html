@@ -11,7 +11,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto; /* Cursor personalizado */
+            cursor: url('https://github.com/Polero7070/polsmymind99/blob/main/P%20(2).png?raw=true'), auto;
         }
 
         h1 {
@@ -65,9 +65,21 @@
             width: 150px;
             cursor: pointer;
         }
+
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            cursor: pointer;
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Ícono de carrito (puede ser reemplazado por otro diseño o imagen) -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito" class="cart-icon">
 
     <h1>Prendas Superiores</h1>
 
@@ -113,5 +125,19 @@
             <img src="URL_IMAGEN_REMERA_06" alt="Remera POLS 2025.06" />
             <h2>Remera 2025.06</h2>
             <p>$25.500</p>
-            <button>Añadir
-      
+            <button>Añadir al carrito</button>
+        </div>
+    </div>
+
+    <!-- Script que redirige al tocar el ícono de carrito -->
+    <script>
+        const carts = document.querySelectorAll('.cart-icon');
+        carts.forEach(cart => {
+            cart.addEventListener('click', () => {
+                window.location.href = 'https://www.polsmymind.com.ar';
+            });
+        });
+    </script>
+
+</body>
+</html>
