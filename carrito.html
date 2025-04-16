@@ -9,15 +9,15 @@
 <script>
   const carritoDiv = document.getElementById('carrito');
   const productosCarrito = document.getElementById('productosCarrito');
-  
+  const contador = document.getElementById('contador');
+
+  // Inicializa el contador del carrito al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
+    actualizarCarrito();
+  });
+
   carritoDiv.addEventListener('mouseenter', () => {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    productosCarrito.innerHTML = carrito.map(p => `
-      <div>
-        <span>${p.nombre}</span> - <span>$${p.precio}</span>
-        <button onclick="eliminarProducto('${p.nombre}')">Eliminar</button>
-      </div>
-    `).join('');
+    actualizarVistaCarrito();
     productosCarrito.style.display = 'block';
   });
 
@@ -25,16 +25,30 @@
     productosCarrito.style.display = 'none';
   });
 
+  function actualizarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    contador.textContent = carrito.length;
+  }
+
+  function actualizarVistaCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    if (carrito.length === 0) {
+      productosCarrito.innerHTML = '<p>El carrito está vacío.</p>';
+    } else {
+      productosCarrito.innerHTML = carrito.map(p => `
+        <div style="margin-bottom: 5px;">
+          <span>${p.nombre}</span> - <span>$${p.precio}</span>
+          <button onclick="eliminarProducto('${p.nombre}')">Eliminar</button>
+        </div>
+      `).join('');
+    }
+  }
+
   function eliminarProducto(nombre) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     carrito = carrito.filter(p => p.nombre !== nombre);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    document.getElementById('contador').textContent = carrito.length;
-    productosCarrito.innerHTML = carrito.map(p => `
-      <div>
-        <span>${p.nombre}</span> - <span>$${p.precio}</span>
-        <button onclick="eliminarProducto('${p.nombre}')">Eliminar</button>
-      </div>
-    `).join('');
+    actualizarCarrito();
+    actualizarVistaCarrito();
   }
 </script>
