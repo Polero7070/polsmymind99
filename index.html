@@ -202,7 +202,16 @@
       border: none;
       border-radius: 10px;
     }
+.cart-icon {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: transform 0.2s ease;
+}
 
+.cart-icon:hover {
+  transform: scale(1.1);
+}
     @media (max-width: 500px) {
       header {
         flex-direction: row;
@@ -271,6 +280,7 @@
 <body>
 
 <header>
+  <header>
   <div class="rev">rev 2025</div>
   <nav>
     <div>
@@ -288,7 +298,14 @@
         <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
       </div>
     </div>
+    <a href="cart.html" class="cart-icon" aria-label="Carrito de compras">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" viewBox="0 0 24 24">
+        <path d="M7 4h-2l-3 7v11h22v-11l-3-7h-2v-1c0-1.103-.897-2-2-2h-8c-1.103 0-2 .897-2 2v1zm2-1h6v1h-6v-1zm10.28 3l2.22 5h-18l2.22-5h13.56zm-15.28 7h18v9h-18v-9z"/>
+      </svg>
+    </a>
   </nav>
+</header>
+
 </header>
 
 <div class="content">
