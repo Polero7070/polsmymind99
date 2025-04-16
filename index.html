@@ -34,16 +34,12 @@
       width: 100%;
     }
 
-    .rev {
-      font-size: 16px;
-      color: black;
-    }
-
     nav {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
     }
 
     nav > div {
@@ -308,10 +304,13 @@
 <body>
 
 <header>
-  <div class="rev"></div>
   <nav>
+    <!-- Guía de talles -->
     <div>
-    <a href="#">guía de talles</a>
+      <a href="#">guía de talles</a>
+    </div>
+    
+    <!-- Qué buscas?!? en el centro -->
     <div>
       <a href="shop.html">qué buscas?!?</a>
       <ul class="submenu">
@@ -320,12 +319,16 @@
         <li><a href="accesorios.html">accesorios</a></li>
       </ul>
     </div>
+    
+    <!-- Contacto a la derecha -->
+    <div>
       <a href="#">contacto</a>
       <div class="submenu">
         <a href="https://www.instagram.com/polsmymind__" target="_blank">instagram</a>
       </div>
     </div>
-    <!-- Carrito agregado al final de la barra -->
+    
+    <!-- Carrito al final -->
     <div class="cart-icon-container">
       <img src="https://github.com/Polero7070/polsmymind99/blob/main/carrito.png?raw=true" alt="Carrito" class="cart-icon">
     </div>
